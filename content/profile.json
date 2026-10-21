@@ -11,7 +11,7 @@
     {
       "title": "게임플레이",
       "tech": "C++ · Unreal Engine 5 · Blueprint",
-      "description": "조준과 투사체 충돌, 포탈 이동, 스폰과 사망 처리까지. 핵심 로직을 컴포넌트와 서브시스템으로 분리하고 Blueprint 연출에 연결합니다.",
+      "description": "조준·투사체 충돌과 로컬 빔 표시, 공간 포탈의 시점 변환과 통과 처리까지. 핵심 로직을 컴포넌트와 서브시스템으로 분리하고 Blueprint 연출에 연결합니다.",
       "anchor": "combat"
     },
     {

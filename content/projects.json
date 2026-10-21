@@ -14,19 +14,19 @@
       "Blueprint",
       ".NET 8 WPF"
     ],
-    "summary": "조준과 투사체부터 AI 특수 이동, 데이터 편집 도구까지. 멀티플레이 슈팅 게임의 플레이와 제작 환경을 구현했습니다.",
-    "description": "Unreal Engine 5.6.1 기반의 3D 멀티플레이 슈팅 팀 프로젝트입니다. 전투와 특수 이동 경로 탐색, 포탈, 제작 도구를 담당했습니다.",
-    "cover": "cover.webp",
+    "summary": "조준·투사체·빔 표시와 공간 포탈, AI 특수 이동 경로부터 데이터 편집·레벨 검증 도구까지 구현했습니다.",
+    "description": "Unreal Engine 5.6.1 기반의 3D 멀티플레이 슈팅 팀 프로젝트입니다. 전투 시스템, 공간 포탈과 AI 특수 이동 경로 탐색, 데이터 편집·레벨 검증 도구를 담당했습니다.",
+    "cover": "cover-20261021.webp",
     "repository": "https://github.com/msg1150/UnrealTeamProjectPortfolio",
-    "codeRevision": "d0415f7a35e5674e69ba3a3ec27d63dd70c0253e",
-    "presentation": "/assets/downloads/BattleArena-ParkJanghan.pptx",
-    "presentationSize": "28.5 MB",
+    "codeRevision": "fee0b72e4cc6236acfcb332139613f53fd87b244",
+    "presentation": "/assets/downloads/BattleArena-ParkJanghan.pptx?v=20261021-9b1f197e",
+    "presentationSize": "43.0 MB",
     "featured": true,
     "published": true,
     "highlights": [
-      "조준·투사체·충돌 판정",
-      "AI 특수 이동 경로 탐색",
-      "데이터 편집·레벨 검증 도구"
+      "조준·투사체 충돌·로컬 빔 표시",
+      "공간 포탈의 시점 변환과 안전한 통과",
+      "AI 특수 이동 경로·데이터 편집·레벨 검증"
     ],
     "cases": [
       {
@@ -43,13 +43,17 @@
         "video": {
           "file": "shooting.mp4",
           "poster": "shooting-poster.webp",
-          "caption": "직접 구현한 조준 자세 보정과 발사 동작"
+          "caption": "직접 구현한 조준 자세 보정과 발사 동작",
+          "width": 864,
+          "height": 308
         },
         "images": [
           {
             "file": "collision.webp",
             "alt": "서로 다른 크기의 플레이어 명중 Sphere와 환경 충돌 Sphere",
-            "caption": "플레이어 명중 범위와 환경 충돌 범위를 분리"
+            "caption": "플레이어 명중 범위와 환경 충돌 범위를 분리",
+            "width": 1036,
+            "height": 654
           }
         ],
         "links": [
@@ -82,48 +86,124 @@
           {
             "file": "navigation.webp",
             "alt": "게임 레벨에 표시한 AI 경로와 특수 이동 연결",
-            "caption": "흰색: 현재 경로 / 빨강: 특수 이동 연결 / 파랑: 이후 경로"
+            "caption": "흰색: 현재 경로 / 빨강: 특수 이동 연결 / 파랑: 이후 경로",
+            "width": 1155,
+            "height": 856
           }
         ],
         "links": [
           {
             "label": "경로 탐색 코드",
-            "path": "PathLink/PathLinkRouteFinder.cpp"
+            "path": "PathLink/PathLinkRouteFinder.cpp",
+            "revision": "2d5b0c733c93af8702e434e984767b7501b3d082"
           }
         ],
         "sourceSlides": [
           5
         ],
-        "navTitle": "AI 경로 탐색"
+        "navTitle": "AI 경로 탐색",
+        "sourceContext": "PathLink 개인 구현 버전 기준"
       },
       {
         "id": "portal",
         "label": "PORTAL SYSTEM",
-        "title": "서버의 이동 처리와 로컬의 출구 화면 분리",
-        "question": "멀티플레이에서 포탈 이동을 처리하면서 각 플레이어에게 출구 쪽 시점을 보여주려면?",
+        "title": "시점에 맞는 출구 화면과 안전한 공간 포탈 통과",
+        "question": "바라보는 위치에 따라 출구 화면을 바꾸고, 위치·속도·시점을 변환하면서 막힌 도착 영역으로의 이동을 방지하려면?",
         "implementation": [
-          "서버에서 플레이어의 위치와 방향을 변경합니다. 이동 직후에는 설정한 시간 동안 재진입을 제한합니다.",
-          "로컬 카메라를 출구 시점으로 변환하고 SceneCapture 결과를 포탈 표면에 표시합니다. 화면 점유율에 따라 렌더 타깃 해상도를 선택합니다.",
-          "코드 기본값으로 정지 상태의 갱신 빈도를 초당 5회, 프레임당 촬영 상한을 2회로 제어합니다. 이 수치는 성능 측정 결과가 아닌 설정값입니다."
+          "입구 기준의 카메라 위치를 출구 좌표로 변환하고, 포탈 경계로 비대칭 투영(Off-axis projection)을 계산합니다. SceneCapture 결과를 포탈 표면에 표시해 보는 위치에 따라 출구 화면이 달라지도록 구성했습니다.",
+          "화면 점유율에 맞춰 렌더 타깃 해상도를 선택합니다. 기본 정지 갱신은 초당 5회, 촬영 상한은 프레임당 2회입니다. 새 공간 포탈은 가까울 때 갱신 간격을 생략하되 프레임당 촬영 상한은 유지합니다. 이 수치는 코드 기본값입니다."
         ],
-        "result": "이동 권한은 서버가 관리하고, 포탈 너머의 화면은 플레이어별 로컬 시점으로 렌더링합니다.",
+        "result": "카메라 위치에 맞춘 포탈 화면을 표시하고, 도착 영역과 경로가 유효할 때 서버에서 위치·속도·시점 변환을 확정합니다.",
         "images": [
           {
-            "file": "portal.webp",
-            "alt": "출구 쪽 게임 화면을 보여주는 포탈 표면",
-            "caption": "포탈 표면에 표시한 출구 방향의 게임 화면"
+            "file": "portal-front.webp",
+            "alt": "정면에서 본 공간 포탈의 출구 전경",
+            "caption": "정면 시점의 출구 화면",
+            "width": 1399,
+            "height": 523
+          },
+          {
+            "file": "portal-side.webp",
+            "alt": "측면으로 이동했을 때 달라진 공간 포탈 내부 시야",
+            "caption": "측면 시점에서 달라지는 포탈 내부 시야",
+            "width": 1404,
+            "height": 530
           }
         ],
         "links": [
           {
-            "label": "포탈 렌더링 코드",
-            "path": "Teleport/PortalViewSubsystem.cpp"
+            "label": "공간 포탈 렌더링",
+            "path": "Teleport/SeamlessPortalActor.cpp#L363-L389"
+          },
+          {
+            "label": "촬영 스케줄링",
+            "path": "Teleport/PortalViewSubsystem.cpp#L133-L230"
+          },
+          {
+            "label": "통과 판정",
+            "path": "Teleport/SeamlessPortalActor.cpp#L497-L610"
+          },
+          {
+            "label": "통과 관리",
+            "path": "Teleport/SeamlessPortalTraversalSubsystem.cpp"
           }
         ],
         "sourceSlides": [
-          6
+          6,
+          7,
+          8,
+          9
         ],
-        "navTitle": "포탈 시스템"
+        "navTitle": "공간 포탈",
+        "flow": [
+          "카메라 위치",
+          "입구→출구 좌표 변환",
+          "비대칭 투영 계산",
+          "SceneCapture 표면 표시"
+        ],
+        "sections": [
+          {
+            "title": "통과 조건과 도착 충돌 확인",
+            "paragraphs": [
+              "이전·현재 이동 구간으로 입구 접촉과 통과 방향을 검사합니다. 여러 포탈이 후보라면 첫 접촉을 선택하고 입구·출구 좌표계 사이에서 위치, 속도와 시점을 변환합니다.",
+              "실제 캐릭터의 전체 Capsule을 유지한 채 도착 영역의 중첩과 도착까지의 경로 충돌을 확인합니다. 중첩이나 경로 막힘이 있으면 통과를 거부하고, 유효할 때 서버가 위치·속도·시점 적용을 확정한 뒤 재진입을 제한합니다.",
+              "기본 도착 규칙은 출구의 가로 중앙으로 이동하면서 높이를 유지하는 것입니다. 포탈 크기에 따라 속도의 크기를 바꾸지 않습니다."
+            ],
+            "flow": [
+              "입구 접촉·방향 검사",
+              "출구 좌표·속도·시점 변환",
+              "Capsule·경로 충돌 검사",
+              "서버 이동 확정"
+            ],
+            "animations": [
+              {
+                "file": "portal-traversal.gif",
+                "poster": "portal-entry.webp",
+                "title": "공간 포탈 통과 과정",
+                "alt": "입구 접근부터 출구 도착까지의 공간 포탈 통과 애니메이션",
+                "caption": "PPT의 통과 과정 GIF · 재생 버튼을 눌러 확인",
+                "width": 1398,
+                "height": 524
+              }
+            ],
+            "images": [
+              {
+                "file": "portal-entry.webp",
+                "alt": "포탈 통과 전 입구에 접근한 위치와 시점",
+                "caption": "통과 전 · 입구 접근",
+                "width": 1398,
+                "height": 524
+              },
+              {
+                "file": "portal-exit.webp",
+                "alt": "포탈 통과 후 출구 공간의 위치와 시점",
+                "caption": "통과 후 · 출구 공간",
+                "width": 1398,
+                "height": 524
+              }
+            ]
+          }
+        ]
       },
       {
         "id": "data-tools",
@@ -147,12 +227,16 @@
           {
             "file": "data-editor.webp",
             "alt": "데이터 행과 필드값을 편집하는 WPF 데이터 에디터",
-            "caption": "Manifest를 기반으로 구성한 외부 데이터 편집기"
+            "caption": "Manifest를 기반으로 구성한 외부 데이터 편집기",
+            "width": 1283,
+            "height": 807
           },
           {
             "file": "data-validation.webp",
             "alt": "잘못된 숫자 입력의 저장을 차단한 검증 메시지",
-            "caption": "숫자 필드 입력 오류를 표시하고 저장을 중단"
+            "caption": "숫자 필드 입력 오류를 표시하고 저장을 중단",
+            "width": 1283,
+            "height": 807
           }
         ],
         "links": [
@@ -166,8 +250,8 @@
           }
         ],
         "sourceSlides": [
-          7,
-          8
+          10,
+          11
         ],
         "navTitle": "데이터 도구"
       },
@@ -185,7 +269,9 @@
           {
             "file": "level-validator.webp",
             "alt": "레벨 검증 오류 목록과 선택된 이동 경로 오브젝트",
-            "caption": "검출 예시: 이동 경로 입구가 지면에서 50cm 떨어진 배치"
+            "caption": "검출 예시: 이동 경로 입구가 지면에서 50cm 떨어진 배치",
+            "width": 1361,
+            "height": 523
           }
         ],
         "links": [
@@ -195,7 +281,7 @@
           }
         ],
         "sourceSlides": [
-          9
+          12
         ],
         "navTitle": "레벨 검증"
       }
@@ -211,17 +297,98 @@
             "label": "1인칭 보정 코드",
             "path": "Weapon/ProjectileFirstPersonRenderingComponent.cpp"
           }
+        ],
+        "id": "first-person-rendering",
+        "sourceSlides": [
+          13
+        ]
+      },
+      {
+        "id": "beam-rendering",
+        "title": "레일건·머신건 빔의 로컬 1인칭 표시 보정",
+        "text": "로컬 1인칭 플레이어인지 확인하고 카메라와 총구 사이의 가림 여부를 검사해 준비된 보정용 효과 변형을 선택합니다. 원격 시점이거나 가림이 없으면 기존 빔을 사용합니다.",
+        "paragraphs": [
+          "물리 총구와 실제 명중 끝점의 원본 월드 좌표를 유지합니다. 가까운 빔 형상에만 1인칭 변환을 적용하고 명중 끝점으로 갈수록 월드 공간으로 연결합니다. 피해 판정과 원격 시점은 변경하지 않습니다.",
+          "준비된 Niagara·머티리얼 변형으로 표시하며 총구 쪽 형상에 변환을 한 번 적용합니다. 보정 전 총구 좌표를 전달해 이중 변환을 방지합니다.",
+          "짧은 레일건 빔은 실제 빔 길이 안에서 물결 구간을 계산하고 표시 길이에 맞춰 폭과 흔들림을 축소합니다. 머신건과 레일건은 전체 빔을 즉시 표시하며, 무기별 표시 지속 시간은 따로 설정합니다."
+        ],
+        "animations": [
+          {
+            "file": "beam-before.gif",
+            "poster": "beam-before.webp",
+            "title": "보정 비활성화",
+            "alt": "보정 비활성화 상태에서 총구 부근의 빔 연결이 끊겨 보이는 발사 장면",
+            "caption": "총구 부근에서 빔 연결이 끊겨 보이는 장면",
+            "width": 640,
+            "height": 360
+          },
+          {
+            "file": "beam-after.gif",
+            "poster": "beam-after.webp",
+            "title": "보정 활성화",
+            "alt": "보정 활성화 상태에서 총구부터 벽까지 빔이 이어지는 발사 장면",
+            "caption": "총구에서 벽까지 빔이 이어지는 장면",
+            "width": 640,
+            "height": 360
+          }
+        ],
+        "links": [
+          {
+            "label": "빔 효과 코드",
+            "path": "Weapon/WeaponBeamEffectLibrary.cpp"
+          },
+          {
+            "label": "레일건 물결 계산",
+            "path": "Weapon/RailBeamWaveMath.h"
+          }
+        ],
+        "sourceSlides": [
+          14,
+          15
         ]
       },
       {
         "title": "스폰과 리스폰 위치 선택",
-        "text": "Player / AI 전용 스폰 지점을 우선 배정하고 생성·조종 연결 실패 시 배정 횟수를 복구합니다. 리스폰은 사망 위치에서 먼 순서로 후보를 정렬하고, 먼 절반 중 무작위로 선택합니다. 후보 수는 내림(N/2), 최소 1곳입니다.",
+        "text": "Player / AI 전용 스폰 지점을 우선 배정하고 생성·조종 연결 실패 시 배정 횟수를 복구합니다. 리스폰은 사망 위치에서 먼 순서로 후보를 정렬하고, 먼 절반 중 무작위로 선택합니다. 후보 수는 내림(N/2), 최소 1곳입니다. 거리가 같은 후보는 무작위 우선값으로 순서를 정합니다.",
         "limit": "거리 기준으로 선택하며 주변 적의 존재 여부는 검사하지 않습니다.",
         "links": [
           {
             "label": "스폰·리스폰 코드",
-            "path": "SpawnSelectionSystem/SpawnSelectionComponent.cpp#L597-L614"
+            "path": "SpawnSelectionSystem/SpawnSelectionComponent.cpp#L546-L614"
           }
+        ],
+        "id": "spawn-respawn",
+        "sourceSlides": [
+          16
+        ]
+      },
+      {
+        "id": "spawn-audio",
+        "title": "접속 준비 후 최초 스폰 사운드 재생",
+        "text": "서버와 클라이언트의 연결·로딩·시점 준비를 확인한 뒤, 최초 스폰 사운드를 재생 대상별로 한 번씩 전달·재생합니다.",
+        "paragraphs": [
+          "서버는 연결과 ViewTarget, 클라이언트 월드 로드 상태를 확인합니다. 준비 전에는 타이머로 기다리고 준비 후 공유·소유자 RPC를 전달합니다.",
+          "클라이언트는 로딩 종료와 Pawn·카메라 갱신을 기다립니다. 재생 대상별 중복을 차단하고 각 대상에 한 번씩 사운드를 재생합니다.",
+          "지연 재생 동안 사운드 참조를 유지합니다. EndPlay에서는 서버·로컬 대기 타이머와 지연 사운드 타이머를 해제합니다."
+        ],
+        "flow": [
+          "연결·월드 로드 준비",
+          "공유·소유자 RPC 전달",
+          "로딩·카메라 준비",
+          "대상별 1회 재생"
+        ],
+        "links": [
+          {
+            "label": "스폰 사운드 코드",
+            "path": "SpawnSelectionSystem/CharacterSpawnSoundComponent.cpp"
+          },
+          {
+            "label": "스폰 사운드 테스트",
+            "path": "SpawnSelectionSystem/CharacterSpawnSoundTests.cpp"
+          }
+        ],
+        "sourceSlides": [
+          17
         ]
       },
       {
@@ -231,12 +398,16 @@
           {
             "file": "drop-a.webp",
             "alt": "플레이어 A 시점의 드롭 아이템",
-            "caption": "플레이어 A"
+            "caption": "플레이어 A",
+            "width": 641,
+            "height": 482
           },
           {
             "file": "drop-b.webp",
             "alt": "플레이어 B 시점의 드롭 아이템",
-            "caption": "플레이어 B"
+            "caption": "플레이어 B",
+            "width": 639,
+            "height": 478
           }
         ],
         "links": [
@@ -244,6 +415,10 @@
             "label": "사망 아이템 동기화 코드",
             "path": "DeathDrop/DeathDropCarrier.cpp"
           }
+        ],
+        "id": "death-drop",
+        "sourceSlides": [
+          18
         ]
       },
       {
@@ -252,13 +427,19 @@
         "video": {
           "file": "death-camera.mp4",
           "poster": "death-camera-poster.webp",
-          "caption": "사망 전후의 시점 전환과 벽 뒤 공격자 표시"
+          "caption": "사망 전후의 시점 전환과 벽 뒤 공격자 표시",
+          "width": 864,
+          "height": 342
         },
         "links": [
           {
             "label": "사망 카메라 코드",
             "path": "DeathCam/DeathCamActor.cpp"
           }
+        ],
+        "id": "death-camera",
+        "sourceSlides": [
+          19
         ]
       },
       {
@@ -268,12 +449,16 @@
           {
             "file": "outline-a.webp",
             "alt": "플레이어 A 카메라의 캐릭터 외곽선",
-            "caption": "카메라별 강조 대상 표시"
+            "caption": "카메라별 강조 대상 표시",
+            "width": 638,
+            "height": 480
           },
           {
             "file": "nickname-occluded.webp",
             "alt": "벽에 가려져 닉네임 표시에서 제외된 대상",
-            "caption": "벽에 가려진 대상은 닉네임 표시에서 제외"
+            "caption": "벽에 가려진 대상은 닉네임 표시에서 제외",
+            "width": 638,
+            "height": 478
           }
         ],
         "links": [
@@ -285,6 +470,11 @@
             "label": "닉네임 코드",
             "path": "CharacterDisplay/ShooterNicknameComponent.cpp"
           }
+        ],
+        "id": "character-display",
+        "sourceSlides": [
+          20,
+          21
         ]
       },
       {
@@ -294,27 +484,83 @@
           {
             "file": "appearance.webp",
             "alt": "AI 캐릭터 외형 데이터 테이블",
-            "caption": "외형 ID별 메시와 사망 파츠 데이터"
+            "caption": "외형 ID별 메시와 사망 파츠 데이터",
+            "width": 1600,
+            "height": 731
           },
           {
             "file": "bgm.webp",
             "alt": "메뉴와 로비 등 게임 상태별 BGM 설정",
-            "caption": "게임 상태별 BGM 설정"
+            "caption": "게임 상태별 BGM 설정",
+            "width": 1133,
+            "height": 652
           }
         ],
         "links": [
           {
             "label": "AI 외형 동기화 코드",
             "path": "CharacterAppearance/CharacterAppearanceComponent.cpp#L167-L183"
+          },
+          {
+            "label": "BGM 상태 코드",
+            "path": "Audio/BGMSubsystem.cpp"
+          },
+          {
+            "label": "BGM 재생 관리",
+            "path": "Audio/BGMPlayback.cpp"
           }
+        ],
+        "id": "appearance-audio",
+        "sourceSlides": [
+          22,
+          23
+        ],
+        "paragraphs": [
+          "같은 곡과 반복 설정이면 기존 재생을 유지하며, 맵 이동 시 종료와 재생 시점을 관리합니다."
         ]
       }
     ],
     "testing": [
-      "충돌 순서: 플레이어와 벽의 선후 관계, 서로 다른 검사 반경",
-      "가림 검사: 큰 명중 범위가 얇은 벽 너머의 대상을 선택하는지 확인",
-      "합류 지점: 프레임 내 시간 분할 후 위치·속도 유지와 합류 전후 벽 충돌"
+      "투사체: 충돌 순서·벽 가림·합류 지점의 프레임 내 시간 분할",
+      "1인칭 렌더링: 충돌 영역 내 스케일과 FOV·Near Clip 입력 검사",
+      "공간 포탈: 좌표·속도 변환, 투영, 통과 조건과 도착 충돌",
+      "최초 스폰 사운드: 연결·로딩·카메라 준비, 중복 재생과 지연 사운드 수명"
     ],
-    "sourceNotice": "공개 저장소는 개인 구현 코드와 WPF 데이터 에디터를 담고 있습니다. 실행과 테스트에는 원본 프로젝트와 Unreal Engine 5.6.1 환경이 필요하며, 전체 에셋·의존성과 테스트 실행 결과는 포함하지 않습니다."
+    "sourceNotice": "공개 저장소는 개인 구현 코드와 WPF 데이터 에디터를 담고 있습니다. 실행과 테스트에는 원본 프로젝트와 Unreal Engine 5.6.1 환경이 필요하며, 전체 에셋·의존성과 테스트 실행 결과는 포함하지 않습니다.",
+    "coverPortrait": true,
+    "technicalDocument": "https://pjhgameprogramming.notion.site/Game-Programming-Technical-Wiki-3cea186e6315804cb41ff052b738453a",
+    "testLinks": [
+      {
+        "label": "투사체 충돌 테스트",
+        "path": "Weapon/ProjectileSplitCollisionTests.cpp"
+      },
+      {
+        "label": "투사체 합류 테스트",
+        "path": "Weapon/ProjectileConvergenceTests.cpp"
+      },
+      {
+        "label": "1인칭 렌더링 테스트",
+        "path": "Weapon/FirstPersonRenderingTests.cpp"
+      },
+      {
+        "label": "공간 포탈 테스트",
+        "path": "Teleport/SeamlessPortalTests.cpp"
+      },
+      {
+        "label": "스폰 사운드 테스트",
+        "path": "SpawnSelectionSystem/CharacterSpawnSoundTests.cpp"
+      }
+    ],
+    "blueprintNotice": "공개 저장소에는 C++ 코드와 WPF 도구, 직접 구현한 기능을 중심으로 선별한 무기 Blueprint를 수록했습니다.",
+    "verificationSummary": "Unreal Automation Test로 투사체, 1인칭 렌더링, 공간 포탈과 최초 스폰 사운드의 경계 조건을 반복 검사하는 시나리오를 작성했습니다. 공개 저장소에는 테스트 실행 결과가 포함되어 있지 않습니다.",
+    "sourceSlides": {
+      "overview": [
+        1,
+        2
+      ],
+      "sourceAndContact": [
+        24
+      ]
+    }
   }
 ]

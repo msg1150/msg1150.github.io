@@ -90,6 +90,30 @@ if (tocLinks.length && 'IntersectionObserver' in window) {
 }
 document.querySelectorAll('details').forEach(details => {
   details.addEventListener('toggle', () => {
-    if (!details.open) details.querySelectorAll('video').forEach(v => v.pause());
+    if (!details.open) {
+      details.querySelectorAll('video').forEach(v => v.pause());
+      details.querySelectorAll('[data-animation]').forEach(stopAnimation);
+    }
+  });
+});
+function stopAnimation(container) {
+  const image = container.querySelector('[data-animation-image]');
+  const button = container.querySelector('[data-animation-toggle]');
+  if (!image || !button) return;
+  image.src = image.dataset.still;
+  button.setAttribute('aria-pressed', 'false');
+  button.textContent = '애니메이션 재생';
+}
+document.querySelectorAll('[data-animation]').forEach(container => {
+  const image = container.querySelector('[data-animation-image]');
+  const button = container.querySelector('[data-animation-toggle]');
+  button.addEventListener('click', () => {
+    if (button.getAttribute('aria-pressed') === 'true') {
+      stopAnimation(container);
+      return;
+    }
+    image.src = image.dataset.motion;
+    button.setAttribute('aria-pressed', 'true');
+    button.textContent = '정지 화면 보기';
   });
 });

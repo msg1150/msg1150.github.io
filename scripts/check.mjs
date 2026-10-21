@@ -28,7 +28,7 @@ for (const page of pages) {
   assert(html.includes('name="description"') && html.includes('rel="canonical"'),`Metadata missing: ${page}`);
   const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);
   assert.equal(new Set(ids).size,ids.length,`Duplicate IDs in ${page}`);
-  for (const match of html.matchAll(/\b(?:href|src|poster|data-before|data-after)="([^"]+)"/g)) {
+  for (const match of html.matchAll(/\b(?:href|src|poster|data-before|data-after|data-still|data-motion)="([^"]+)"/g)) {
     const raw = match[1].replaceAll('&amp;','&');
     if (/^(?:https?:|mailto:|data:)/.test(raw)) continue;
     assert(raw && !raw.startsWith('javascript:'),`Empty/unsafe URL in ${page}`);
