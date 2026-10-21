@@ -8,8 +8,24 @@
   "description": "Unreal Engine과 C++로 전투 시스템을 구현하고, 제작 과정에 필요한 데이터 편집·검증 도구를 만듭니다.",
   "approach": "플레이어가 경험하는 동작부터 개발자가 사용하는 도구까지, 문제의 원인을 나누고 각 역할에 맞는 구조로 구현합니다.",
   "skills": [
-    { "title": "게임플레이", "tech": "C++ · Unreal Engine 5 · Blueprint", "description": "조준과 투사체 충돌, 포탈 이동, 스폰과 사망 처리까지. 핵심 로직을 컴포넌트와 서브시스템으로 분리하고 Blueprint 연출에 연결합니다.", "anchor": "combat" },
-    { "title": "AI 이동 경로", "tech": "NavMesh · Dijkstra · PathLink", "description": "걷기와 포탈·점프패드 이동을 하나의 경로로 비교합니다. 정적 연결 정보를 재사용하고 선택한 구간의 상세 경로를 생성합니다.", "anchor": "navigation" },
-    { "title": "제작 도구", "tech": ".NET 8 WPF · Reflection · Slate", "description": "외부 데이터 편집과 JSON 동기화, 잘못된 입력의 저장 차단, 레벨 배치 오류 검사로 반복 작업을 돕습니다.", "anchor": "data-tools" }
-  ]
+    {
+      "title": "게임플레이",
+      "tech": "C++ · Unreal Engine 5 · Blueprint",
+      "description": "조준과 투사체 충돌, 포탈 이동, 스폰과 사망 처리까지. 핵심 로직을 컴포넌트와 서브시스템으로 분리하고 Blueprint 연출에 연결합니다.",
+      "anchor": "combat"
+    },
+    {
+      "title": "AI 이동 경로",
+      "tech": "NavMesh · Dijkstra · PathLink",
+      "description": "걷기와 포탈·점프패드 이동을 하나의 경로로 비교합니다. 정적 연결 정보를 재사용하고 선택한 구간의 상세 경로를 생성합니다.",
+      "anchor": "navigation"
+    },
+    {
+      "title": "제작 도구",
+      "tech": ".NET 8 WPF · Reflection · Slate",
+      "description": "외부 데이터 편집과 JSON 동기화, 잘못된 입력의 저장 차단, 레벨 배치 오류 검사로 반복 작업을 돕습니다.",
+      "anchor": "data-tools"
+    }
+  ],
+  "portrait": null
 }
