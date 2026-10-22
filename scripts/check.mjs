@@ -49,6 +49,8 @@ for (const page of pages) {
   for (const link of html.matchAll(/<a\b[^>]*target="_blank"[^>]*>/g)) assert(/rel="[^"]*noopener/.test(link[0]),`External link rel missing: ${page}`);
 }
 const home = await htmlAt(path.join(root, 'index.html'));
+assert(home.includes('id="profile"'), 'Profile must be included on homepage');
+assert(!/href="\/resume\//.test(home), 'Homepage profile navigation should stay on homepage');
 for (const project of projects.filter(p => p.published)) {
   if (project.sourceManifest) {
     const source = JSON.parse(await readFile(path.join(root, project.sourceManifest), 'utf8'));

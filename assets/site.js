@@ -37,7 +37,13 @@ document.querySelectorAll('[data-copy-email]').forEach(button => {
     }
   });
 });
-document.querySelector('[data-print]')?.addEventListener('click', () => window.print());
+document.querySelectorAll('[data-print]').forEach(button => {
+  button.addEventListener('click', () => {
+    if (button.dataset.print === 'profile') document.body.classList.add('print-profile');
+    window.print();
+  });
+});
+window.addEventListener('afterprint', () => document.body.classList.remove('print-profile'));
 const dialog = document.querySelector('.lightbox');
 let previousFocus;
 document.querySelectorAll('[data-lightbox]').forEach(link => {
