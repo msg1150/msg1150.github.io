@@ -44,7 +44,7 @@ node scripts/serve.mjs
 
 `scripts/diagrams.mjs`는 구현을 설명하는 SVG·HTML 도식을 제공합니다. JSON의 `diagrams`에 등록된 이름을 연결하면 오른쪽 미디어 열에 표시합니다. 개념도는 실제 플레이 화면과 구분하며, 원본 미디어도 함께 유지합니다. 스폰의 추첨 버튼은 고정된 후보 6곳 중 먼 3곳에서 선택하는 설명용 예시입니다. `compact: true`인 핵심 구현은 본문과 반복되는 결과 상자를 생략합니다. `sections[].table`은 비교표를 표시합니다.
 
-핵심 구현의 `diagramPlacement: "under-copy"`는 도식을 왼쪽 설명 아래에 배치합니다. 외부 데이터 항목은 이 옵션으로 오른쪽 편집기 이미지를 본문 상단에 맞춥니다. 모바일에서는 설명, 실제 화면, 도식 순서로 읽습니다.
+핵심 구현의 `diagramPlacement: "under-copy"`는 도식을 왼쪽 설명 아래에 배치합니다. 외부 데이터 항목은 `mediaLayout: "diagram-right-images-below"`로 설명 왼쪽·도식 오른쪽을 구성하고 사진 두 장을 그 행 아래에 나란히 표시합니다. 모바일에서는 설명, 도식, 사진 묶음 순서로 읽습니다.
 
 ## 증명사진 추가
 

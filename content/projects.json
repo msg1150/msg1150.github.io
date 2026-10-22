@@ -376,7 +376,7 @@
         "diagrams": [
           "data"
         ],
-        "diagramPlacement": "under-copy",
+    "mediaLayout": "diagram-right-images-below",
         "compact": true,
         "highlights": [
           "타입·Enum·중첩 구조",

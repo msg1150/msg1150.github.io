@@ -337,6 +337,8 @@ details[open]>summary .when-closed,details:not([open])>summary .when-open{displa
 .implementation-copy .data-flow li+li{border:0;box-shadow:inset 1px 0 #cbd1c0}
 .implementation-copy .data-flow li+li:before{display:none}
 .disclosure-body>.implementation-row{margin-top:26px}
+.disclosure-body>.implementation-with-gallery{margin-top:26px}
+.implementation-gallery-below{margin-top:24px;min-width:0}
 .case-part>.implementation-row{margin-top:18px}
 .implementation-row:not(.has-media)>.implementation-copy{max-width:850px}
 .implementation-row.has-supporting-diagram{grid-template-rows:auto 1fr;row-gap:22px}
