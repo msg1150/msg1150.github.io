@@ -1,6 +1,8 @@
 @charset "UTF-8";
 @font-face{font-family:PortfolioSans;src:local("Pretendard"),local("Noto Sans KR"),local("Malgun Gothic");font-display:swap}
-:root{--paper:#f5f4f0;--white:#fff;--ink:#20211f;--muted:#65665f;--line:#dcded5;--accent:#e84925;--soft:#eceee7;--wrap:1168px}
+:root{--paper:#f5f4f0;--white:#fff;--ink:#20211f;--muted:#65665f;--line:#dcded5;--accent:#e84925;--accent-text:#b43b20;--soft:#eceee7;--wrap:1168px}
+.text-accent{color:var(--accent-text);font-weight:700}
+@media print{.text-accent{color:var(--ink)}}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:112px}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:PortfolioSans,"Apple SD Gothic Neo","Malgun Gothic",Arial,sans-serif;font-size:16px;line-height:1.75;word-break:keep-all;overflow-wrap:break-word;-webkit-font-smoothing:antialiased}

@@ -1,8 +1,8 @@
 {
   "fileName": "DungeonSweeper_박장한_포트폴리오.pptx",
-  "sha256": "8353b4ab727f79ea62875e9e54ddf41e7406c3d52518ff0e909c25b411dde5cf",
-  "bytes": 431693,
-  "slideCount": 26,
+  "sha256": "44532b95b4e79e1316b9cb628004f9550d4b7d993a1eb14558fe6f494c0a4ec9",
+  "bytes": 50634833,
+  "slideCount": 27,
   "slides": [
     {
       "number": 1,
@@ -11,160 +11,75 @@
     },
     {
       "number": 2,
-      "title": "프로젝트 개요와 주요 구현",
+      "title": "프로젝트 개요와 핵심 구현",
       "links": []
     },
     {
       "number": 3,
-      "title": "계단을 왕복해도 유지되는 층별 탐험 상태",
+      "title": "탐험 데이터와 실행/표시 계층의 관계",
       "links": [
-        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Dungeon/Runtime/DungeonRunController.Floors.cs",
-        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Dungeon/Data/DungeonExpeditionData.cs"
-      ]
-    },
-    {
-      "number": 4,
-      "title": "현재 작업과 남은 타이머까지 담는 탐험 스냅샷",
-      "links": [
-        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Dungeon/Runtime/DungeonRunController.Persistence.cs",
-        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Dungeon/Data/DungeonExpeditionData.cs"
-      ]
-    },
-    {
-      "number": 5,
-      "title": "진행 복원과 파일 교체를 고려한 저장 시스템",
-      "links": [
-        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Persistence/GameSaveService.cs",
-        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Persistence/SaveFileProtection.cs"
-      ]
-    },
-    {
-      "number": 6,
-      "title": "복원 실패가 현재 가방을 훼손하지 않도록 처리",
-      "links": [
-        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Inventory/GridInventory.cs",
-        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Recovery/DismantleSession.cs"
-      ]
-    },
-    {
-      "number": 7,
-      "title": "자동 저장 실패의 재시도와 정상 종료 보호",
-      "links": [
-        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/UI/Menus/GameShell.cs",
+        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Dungeon/Runtime/DungeonRunController.cs",
+        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Dungeon/Data/DungeonExpeditionData.cs",
         "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Core/GameSession.cs"
       ]
     },
     {
-      "number": 8,
-      "title": "시드로 재현하고 미리 본 도면을 그대로 채택",
+      "number": 4,
+      "title": "대시 방향 유지와 UI 상태에 따른 입력 차단",
       "links": [
-        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Dungeon/Generation/DungeonMapGenerator.cs",
-        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Editor/Dungeons/DungeonGenerationPreview.cs"
+        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Actors/Player/PlayerMovement.cs",
+        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Presentation/World/ThreeDWorldView.cs"
       ]
     },
     {
-      "number": 9,
-      "title": "씬을 새로 만들지 않고 던전을 편집하는 제작 도구",
-      "links": [
-        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Editor/Dungeons/DungeonBuilderWindow.cs",
-        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Editor/Dungeons/DungeonAuthoringService.cs"
-      ]
-    },
-    {
-      "number": 10,
-      "title": "공유 층을 남기는 던전 삭제 도구",
-      "links": [
-        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Editor/Dungeons/DungeonDeletionService.cs"
-      ]
-    },
-    {
-      "number": 11,
-      "title": "층과 던전 단위로 보상을 조절하는 데이터 구조",
-      "links": [
-        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Inventory/LootRewardTable.cs",
-        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Editor/Inspectors/LootRewardTableEditor.cs"
-      ]
-    },
-    {
-      "number": 12,
-      "title": "아이템의 실제 점유 셀을 검사하는 공간형 가방",
+      "number": 5,
+      "title": "비정형 전리품을 배치하는 공간형 가방",
       "links": [
         "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Inventory/GridInventory.cs",
         "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Inventory/LootDefinition.cs"
       ]
     },
     {
-      "number": 13,
-      "title": "검증한 창고 사본으로 회수와 거래 결과를 반영",
-      "links": [
-        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Town/TownWarehouseProgress.cs",
-        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Town/TownEconomyConfig.cs"
-      ]
-    },
-    {
-      "number": 14,
-      "title": "재료와 골드를 검사한 뒤 함께 반영하는 가방 확장",
-      "links": [
-        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Town/TownWarehouseProgress.cs",
-        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Town/TownEconomyConfig.cs"
-      ]
-    },
-    {
-      "number": 15,
-      "title": "시야와 마지막 목격 위치를 사용하는 몬스터 행동",
+      "number": 6,
+      "title": "발견/추적/수색으로 이어지는 몬스터 행동",
       "links": [
         "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Actors/Monsters/EnemyAgent.cs",
         "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Presentation/Actors/MonsterAwarenessIndicator.cs"
       ]
     },
     {
-      "number": 16,
-      "title": "격자 탐색과 몸체 크기의 이동 검사를 조합",
+      "number": 7,
+      "title": "BFS와 BoxCast를 조합한 몬스터 경로 이동",
       "links": [
         "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Dungeon/World/DungeonLayoutFactory.cs",
         "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Actors/Monsters/EnemyAgent.cs"
       ]
     },
     {
-      "number": 17,
-      "title": "은신 판정과 물리 상태를 함께 관리",
+      "number": 8,
+      "title": "타이밍 해체의 성공/실패 진행과 저장 복원",
+      "links": [
+        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Recovery/DismantleSession.cs",
+        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Dungeon/Runtime/DungeonRunController.Interactions.cs"
+      ]
+    },
+    {
+      "number": 9,
+      "title": "은신 진입 판정과 물리 상태 복원을 함께 처리",
       "links": [
         "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Dungeon/Runtime/DungeonRunController.Hiding.cs"
       ]
     },
     {
-      "number": 18,
-      "title": "씬을 넘어 재사용하는 프리팹별 오브젝트 풀",
-      "links": [
-        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Dungeon/Runtime/DungeonActorPool.cs"
-      ]
-    },
-    {
-      "number": 19,
-      "title": "반복되는 미니맵과 디버그 선의 제출 비용 정리",
-      "links": [
-        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/UI/Dungeon/DungeonMinimapTexture.cs",
-        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Diagnostics/MonsterPerceptionLines.cs"
-      ]
-    },
-    {
-      "number": 20,
-      "title": "재질별 합친 지형 메시와 2D 충돌체 구성",
-      "links": [
-        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Presentation/World/ThreeDWorldView.cs",
-        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Dungeon/World/DungeonLayoutFactory.cs"
-      ]
-    },
-    {
-      "number": 21,
-      "title": "2D 게임 규칙을 유지하며 입체 공간을 표현",
+      "number": 10,
+      "title": "2D 게임 규칙을 유지하는 2.5D 화면 표현",
       "links": [
         "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Presentation/World/SpriteDepthView.cs",
         "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Presentation/World/ThreeDWorldView.cs"
       ]
     },
     {
-      "number": 22,
+      "number": 11,
       "title": "정사영 카메라에 맞춘 던전별 시야 마스크",
       "links": [
         "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Presentation/World/DungeonVisionOverlayRenderer.cs",
@@ -172,34 +87,132 @@
       ]
     },
     {
-      "number": 23,
-      "title": "타이밍 해체의 진행과 프레임 지연 처리",
+      "number": 12,
+      "title": "계단 왕복 후에도 유지되는 층별 탐험 상태",
       "links": [
-        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Recovery/DismantleSession.cs",
+        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Dungeon/Runtime/DungeonRunController.Floors.cs",
+        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Dungeon/Data/DungeonExpeditionData.cs"
+      ]
+    },
+    {
+      "number": 13,
+      "title": "씬을 새로 만들지 않는 던전 편집 도구",
+      "links": [
+        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Editor/Dungeons/DungeonBuilderWindow.cs",
+        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Editor/Dungeons/DungeonAuthoringService.cs"
+      ]
+    },
+    {
+      "number": 14,
+      "title": "시드로 재현하고 확인한 도면을 그대로 채택",
+      "links": [
+        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Dungeon/Generation/DungeonMapGenerator.cs",
+        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Editor/Dungeons/DungeonGenerationPreview.cs"
+      ]
+    },
+    {
+      "number": 15,
+      "title": "원본 프리팹을 공유하는 층별 보상 설정",
+      "links": [
+        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Inventory/LootRewardTable.cs",
+        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Editor/Inspectors/LootRewardTableEditor.cs"
+      ]
+    },
+    {
+      "number": 16,
+      "title": "저장 후 상태를 바꾸고, 불러와 이전 상태 복원",
+      "links": [
+        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Dungeon/Runtime/DungeonRunController.Persistence.cs",
+        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Dungeon/Data/DungeonExpeditionData.cs"
+      ]
+    },
+    {
+      "number": 17,
+      "title": "가방 복원 실패 시 기존 상태를 보존",
+      "links": [
+        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Inventory/GridInventory.cs"
+      ]
+    },
+    {
+      "number": 18,
+      "title": "저장 실패 시 재시도하고 정상 종료를 보류",
+      "links": [
+        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/UI/Menus/GameShell.cs",
+        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Core/GameSession.cs"
+      ]
+    },
+    {
+      "number": 19,
+      "title": "저장 파일 보호와 손상 시 백업 복구",
+      "links": [
+        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Persistence/GameSaveService.cs",
+        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Persistence/SaveFileProtection.cs"
+      ]
+    },
+    {
+      "number": 20,
+      "title": "회수/판매를 검증한 뒤 거래 결과를 일괄 반영",
+      "links": [
+        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Town/TownWarehouseProgress.cs",
         "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Dungeon/Runtime/DungeonRunController.Interactions.cs"
       ]
     },
     {
+      "number": 21,
+      "title": "재료와 골드를 함께 반영하는 가방 확장",
+      "links": [
+        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Town/TownWarehouseProgress.cs",
+        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Town/TownEconomyConfig.cs"
+      ]
+    },
+    {
+      "number": 22,
+      "title": "공유 층을 보존하는 던전 삭제 도구",
+      "links": [
+        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Editor/Dungeons/DungeonDeletionService.cs"
+      ]
+    },
+    {
+      "number": 23,
+      "title": "탐험 데이터와 분리한 프리팹별 오브젝트 풀",
+      "links": [
+        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Dungeon/Runtime/DungeonActorPool.cs",
+        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Recovery/CorpseRunData.cs"
+      ]
+    },
+    {
       "number": 24,
-      "title": "실제 프로젝트와 저장을 분리한 검증 실행 도구",
+      "title": "변경 조건을 분리한 미니맵 텍스처 캐시",
+      "links": [
+        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/UI/Dungeon/DungeonMinimapTexture.cs",
+        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/UI/Dungeon/DungeonHud.cs"
+      ]
+    },
+    {
+      "number": 25,
+      "title": "현재 층의 지형을 재질별 메시로 구성",
+      "links": [
+        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Presentation/World/ThreeDWorldView.cs",
+        "https://github.com/msg1150/DungeonSweeper/blob/main/Assets/Scripts/Runtime/Dungeon/World/DungeonLayoutFactory.cs"
+      ]
+    },
+    {
+      "number": 26,
+      "title": "실제 프로젝트와 분리한 검증 파이프라인",
       "links": [
         "https://github.com/msg1150/DungeonSweeper/blob/main/Tools/Validate-GameFlow.ps1",
         "https://github.com/msg1150/DungeonSweeper/blob/main/Tests/ValidationRuntimeDriver.cs"
       ]
     },
     {
-      "number": 25,
-      "title": "격리 환경과 Windows 실행으로 확인한 검증 기록",
-      "links": []
-    },
-    {
-      "number": 26,
+      "number": 27,
       "title": "소스 코드와 연락처",
       "links": [
         "https://github.com/msg1150/DungeonSweeper",
         "https://github.com/msg1150/DungeonSweeper/blob/main/README.md",
         "mailto:wkdgks88009@gmail.com",
-        "https://github.com/msg1150"
+        "https://github.com/msg1150",
+        "https://github.com/msg1150/DungeonSweeper/commits/main/"
       ]
     }
   ]

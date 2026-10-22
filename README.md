@@ -38,6 +38,8 @@ node scripts/serve.mjs
 
 데스크톱에서는 개요와 구현 설명을 왼쪽, 이미지·영상·비교 화면을 오른쪽에 표시합니다. 긴 항목의 하위 설명도 관련 미디어와 한 행으로 묶습니다. 800px 이하에서는 설명 다음에 해당 미디어가 이어집니다. 목차는 본문 위에 가로로 배치해 설명과 미디어가 사용할 너비를 확보합니다.
 
+프로필·프로젝트·핵심/추가 구현·하위 설명의 `highlights` 배열에 원문 구절을 넣으면 진한 주황색 굵은 글씨로 강조합니다. `scripts/prose.mjs`가 텍스트를 이스케이프해 출력하며 HTML을 직접 넣지 않습니다. `evidenceTable`의 마지막 열은 적용 후 결과로 강조하고 인쇄에서는 검은색을 사용합니다.
+
 `scripts/diagrams.mjs`는 구현을 설명하는 SVG·HTML 도식을 제공합니다. JSON의 `diagrams`에 등록된 이름을 연결하면 오른쪽 미디어 열에 표시합니다. 개념도는 실제 플레이 화면과 구분하며, 원본 미디어도 함께 유지합니다. 스폰의 추첨 버튼은 고정된 후보 6곳 중 먼 3곳에서 선택하는 설명용 예시입니다. `compact: true`인 핵심 구현은 본문과 반복되는 결과 상자를 생략합니다. `sections[].table`은 비교표를 표시합니다.
 
 핵심 구현의 `diagramPlacement: "under-copy"`는 도식을 왼쪽 설명 아래에 배치합니다. 외부 데이터 항목은 이 옵션으로 오른쪽 편집기 이미지를 본문 상단에 맞춥니다. 모바일에서는 설명, 실제 화면, 도식 순서로 읽습니다.
@@ -58,7 +60,7 @@ node scripts/serve.mjs
 
 핵심 사례 개수는 조절할 수 있습니다. `sections`에 하위 구현 설명·흐름·이미지를, `animations`에 `file`·`poster`·`title`·`alt`·`caption`을 넣으면 사용자 조작으로 재생하는 GIF를 연결할 수 있습니다. 코드 링크별 `revision`으로 서로 다른 근거 커밋을 지정할 수 있습니다. `technicalDocument`에는 실제 기술 문서 URL을 넣습니다. `comparison: true`는 기본 FPR 비교 이미지를 사용하며, `comparison: {"before": "파일명", "after": "파일명"}`으로 프로젝트별 비교 이미지를 지정할 수 있습니다. 일반 프로젝트에서는 이 옵션을 생략하세요.
 
-Dungeon Sweeper는 제공된 작성 중 PPT만으로 추가했습니다. 실제 게임 미디어가 없는 경우 `cover`를 생략하고 `materialNotice`·`platform`으로 현재 공개 자료를 안내합니다. `testingIntro`·`testingTitle`·`validationSections`로 프로젝트별 검증 설명을 구분합니다. 하위 `sections`도 `links`를 지원합니다. PPT 근거와 미디어 제한은 [Dungeon Sweeper 자료 기록](docs/dungeonsweeper-sources.md)을 참조하세요.
+Dungeon Sweeper는 최신 27장 PPT의 설명·실제 이미지·GIF·코드 링크로 구성했습니다. 핵심 순서는 PPT의 가방·경제, 몬스터, 제작 도구, 탐험·저장, 조작·2.5D입니다. BattleArena와 같은 템플릿을 사용합니다. `evidenceTable`에는 `caption`·`headers`·`rows`·`note`를 넣어 미디어 열에 측정 비교표를 표시할 수 있습니다. `testingIntro`·`testingTitle`·`validationSections`로 검증 범위와 측정 조건을 구분합니다. 하위 `sections`도 `links`를 지원합니다. PPT 근거와 수치 조건은 [Dungeon Sweeper 자료 기록](docs/dungeonsweeper-sources.md)을 참조하세요.
 
 ## GitHub Pages
 
