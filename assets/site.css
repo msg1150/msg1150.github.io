@@ -238,7 +238,8 @@ figcaption a{text-decoration:underline;white-space:nowrap}
 .disclosure>summary{display:flex;align-items:flex-start;justify-content:space-between;gap:22px;cursor:pointer;list-style:none}
 .disclosure-heading{display:block;min-width:0}
 .disclosure-heading>.eyebrow{color:var(--accent);font-size:10px;margin-bottom:12px}
-.disclosure-heading>h3{font-size:30px;line-height:1.5;letter-spacing:-.05em;max-width:740px}
+.disclosure-heading>h3{font-size:30px;line-height:1.5;letter-spacing:-.05em;max-width:740px;color:var(--accent-text)}
+.case-part>h3,.case-text>h3,.extra>summary{color:var(--accent-text)}
 .disclosure-action{flex-shrink:0;font-size:11px;font-weight:500;color:var(--muted);white-space:nowrap;padding-top:8px}
 details[open]>summary .when-closed,details:not([open])>summary .when-open{display:none}
 .extra summary>.disclosure-action{font-size:11px;transform:none;color:var(--muted)}
@@ -297,6 +298,7 @@ details[open]>summary .when-closed,details:not([open])>summary .when-open{displa
 .project-overview-copy .project-actions .button{padding:11px 14px;gap:12px;font-size:12px}
 .project-overview-copy .project-actions .inline-link{margin-left:0}
 .project-overview-copy .project-facts{grid-template-columns:1fr 1fr;border-bottom:0;padding:0;gap:20px}
+.project-exhibition{color:var(--accent-text);font-weight:700}
 .project-overview-media .project-banner{aspect-ratio:auto;max-height:560px;object-fit:contain}
 .project-layout{display:block}
 .project-toc{position:static;padding:0;margin-bottom:38px}
