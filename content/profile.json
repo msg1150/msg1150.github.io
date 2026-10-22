@@ -5,25 +5,25 @@
   "email": "wkdgks88009@gmail.com",
   "github": "https://github.com/msg1150",
   "siteUrl": "https://msg1150.github.io",
-  "description": "Unreal Engine과 C++로 전투 시스템을 구현하고, 제작 과정에 필요한 데이터 편집·검증 도구를 만듭니다.",
+  "description": "Unreal Engine·C++와 Unity·C#으로 게임플레이를 구현하고, 제작에 필요한 데이터 편집·검증 도구를 만듭니다.",
   "approach": "플레이어가 경험하는 동작부터 개발자가 사용하는 도구까지, 문제의 원인을 나누고 각 역할에 맞는 구조로 구현합니다.",
   "skills": [
     {
       "title": "게임플레이",
-      "tech": "C++ · Unreal Engine 5 · Blueprint",
-      "description": "조준·투사체 충돌과 로컬 빔 표시, 공간 포탈의 투영·클리핑·통과 처리를 구현합니다. 핵심 로직을 컴포넌트와 서브시스템으로 분리하고 Blueprint 연출에 연결합니다.",
+      "tech": "C++ · Unreal Engine 5 · Blueprint · C# · Unity",
+      "description": "BattleArena의 조준·투사체 충돌·공간 포탈과 Dungeon Sweeper의 탐험·저장·복원을 구현합니다. 핵심 로직과 화면 표시·연출을 역할에 맞게 나눕니다.",
       "anchor": "combat"
     },
     {
-      "title": "전투 NPC 경로 탐색",
-      "tech": "NavMesh · Dijkstra · PathLink",
-      "description": "전투 NPC의 특수 이동 경로 탐색을 담당했습니다. 비용 0인 포탈과 일반 이동을 Dijkstra로 비교하고, Context별 정적 그래프를 재사용합니다.",
+      "title": "NPC 경로 탐색",
+      "tech": "NavMesh · Dijkstra · PathLink · BFS",
+      "description": "BattleArena는 비용 0인 포탈과 일반 이동을 Dijkstra로 비교하고 정적 그래프를 재사용합니다. Dungeon Sweeper는 직접 이동과 격자 BFS를 조합하고 몸체 크기로 통과 여부를 검사합니다.",
       "anchor": "navigation"
     },
     {
       "title": "제작 도구",
       "tech": ".NET 8 WPF · Reflection · Slate",
-      "description": "외부 데이터 편집과 JSON 동기화, 잘못된 입력의 저장 차단, 레벨 배치 오류 검사로 반복 작업을 돕습니다.",
+      "description": "외부 데이터 편집·JSON 동기화·레벨 검증 도구를 만듭니다. Dungeon Sweeper에서는 시드 생성 미리보기와 수동 던전 편집·검증을 게임 카탈로그에 연결합니다.",
       "anchor": "level-validator"
     }
   ],

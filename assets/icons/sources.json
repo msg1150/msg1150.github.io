@@ -1,0 +1,37 @@
+{
+  "lucide": {
+    "repository": "https://github.com/lucide-icons/lucide",
+    "revision": "20aef31db93fe4d9f398dbb15b120d99c48eef95",
+    "icons": [
+      "external-link",
+      "arrow-down",
+      "arrow-up",
+      "download",
+      "mail",
+      "copy",
+      "printer",
+      "x",
+      "zoom-in",
+      "chevron-up",
+      "chevron-down",
+      "menu",
+      "gamepad-2",
+      "route",
+      "wrench"
+    ],
+    "license": "ISC / MIT"
+  },
+  "devicon": {
+    "repository": "https://github.com/devicons/devicon",
+    "revision": "6a37858047b0e8d9c9c0e68f4a071fc410652e89",
+    "icons": [
+      "cplusplus",
+      "unrealengine",
+      "dot-net",
+      "unity",
+      "csharp",
+      "github"
+    ],
+    "license": "MIT"
+  }
+}

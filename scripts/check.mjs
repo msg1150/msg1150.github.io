@@ -57,6 +57,10 @@ assert(!home.includes('class="profile-disclosure'), 'Duplicate profile panel mus
 for (const skill of profile.skills) for (const technology of skill.tech.split(' · ')) {
   assert(home.includes(`aria-label="${technology}" data-label="${technology}"`), `Technology icon needs a name: ${technology}`);
 }
+for (const page of pages) {
+  const html = await htmlAt(path.join(root,page));
+  assert(!html.includes('/undefined'), `Missing project media reference: ${page}`);
+}
 for (const project of projects.filter(p => p.published)) {
   if (project.sourceManifest) {
     const source = JSON.parse(await readFile(path.join(root, project.sourceManifest), 'utf8'));

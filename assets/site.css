@@ -426,7 +426,7 @@ details[open]>summary .when-closed,details:not([open])>summary .when-open{displa
 .skill-case-link:hover{color:var(--accent)}
 .technology-icons{list-style:none;padding:0;margin:16px 0 0;display:flex;align-items:flex-start;flex-wrap:wrap;gap:10px}
 .technology-icons li{margin:0;min-width:0}
-.technology-symbol{position:relative;display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid #d8ddd0;border-radius:7px;color:var(--technology-color);background:#fff;cursor:help}
+.technology-symbol{position:relative;display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid #d8ddd0;border-radius:7px;color:var(--ink);background:#fff;cursor:help}
 .technology-symbol:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
 .technology-svg{width:27px;height:27px;display:block}
 .technology-svg text{font:700 9px Arial,sans-serif;stroke:none;fill:currentColor}
@@ -435,6 +435,21 @@ details[open]>summary .when-closed,details:not([open])>summary .when-open{displa
 .technology-symbol:hover .technology-tooltip,.technology-symbol:focus .technology-tooltip{visibility:visible;opacity:1}
 .technology-print-label{display:none}
 .profile-print-document{display:none}
+.icon-github g{fill:currentColor}
+.technology-icons{align-items:center}
+.technology-text{font-size:11px;line-height:1.6;border:1px solid #d8ddd0;border-radius:4px;padding:7px 9px;background:#eeefe8;color:#515b47}
+.project-jump-links{display:flex;flex-wrap:wrap;gap:12px 24px;margin:0 0 24px;font-size:13px;font-weight:600}
+.project-jump-links a{display:inline-flex;align-items:center;gap:12px;padding:8px 0}
+.project-jump-links a:hover{color:var(--accent)}
+.project-material-note{padding:30px;border:1px solid #cbd3c1;border-radius:5px;background:#edf0e6}
+.project-material-note h3{font-size:28px;letter-spacing:-.035em;margin-top:14px}
+.project-material-note>p{font-size:13px;color:#5c6651;line-height:1.95;margin-top:18px}
+.project-material-note dl{border-top:1px solid #cbd3c1;margin:22px 0 0;padding-top:18px}
+.project-material-note dt{font-size:10px;font-weight:600;color:#6a755d;margin-top:10px}
+.project-material-note dd{margin:4px 0 0;font-size:12px}
+.project-hero-top .status{white-space:normal;text-align:right}
+.project-hero-top .status>span{flex-shrink:0}
+@media(max-width:600px){.project-material-note{padding:23px}.project-material-note h3{font-size:25px}.technology-icons .technology-text{max-width:none}.project-jump-links{font-size:12px;gap:10px 22px}}
 .unified-profile+.section{padding-top:20px}
 @media(max-width:800px){.unified-profile{padding-top:48px}.profile-intro{grid-template-columns:minmax(0,1fr) 180px;gap:35px}.profile-intro h1{font-size:52px}.profile-skill-grid{gap:22px}.profile-skill-title h2{font-size:16px}.profile-skill-title>.icon{width:20px;height:20px}.profile-skill>p{font-size:12px}}
 @media(max-width:600px){.unified-profile{padding-block:38px 25px}.profile-intro{grid-template-columns:minmax(0,1fr) 90px;gap:18px;align-items:start}.profile-intro-copy{display:contents}.profile-intro-copy>.eyebrow{grid-column:1/-1;font-size:8px}.profile-intro h1{grid-column:1;grid-row:2;font-size:45px;margin-top:0;align-self:center}.profile-intro h1>span{font-size:19px;margin-top:10px}.profile-intro .portrait-slot{grid-column:2;grid-row:2}.profile-description,.profile-approach,.profile-actions,.profile-email{grid-column:1/-1}.profile-description{font-size:14px;margin-top:0}.profile-approach{font-size:12px;margin-top:0}.profile-actions{margin-top:4px;gap:8px}.profile-actions>.button{padding:11px 14px;gap:12px;margin-right:0;font-size:12px}.profile-actions>.icon-button{width:40px;height:40px;padding:8px}.profile-email{margin-top:0;font-size:11px}.profile-skill-grid{grid-template-columns:minmax(0,1fr);gap:25px;padding-block:25px;margin-top:28px}.profile-skill+.profile-skill{border-top:1px solid var(--line);padding-top:25px}.profile-skill-title h2{font-size:17px}.technology-icons{gap:15px;margin-top:13px}.technology-print-label{display:block;font-size:9px;color:var(--muted);line-height:1.5;margin-top:6px;max-width:74px;overflow-wrap:anywhere}.technology-icons li{max-width:80px}.profile-skill>p{margin-top:12px}.technology-tooltip{left:0;transform:none}.technology-symbol{width:44px;height:44px}}
