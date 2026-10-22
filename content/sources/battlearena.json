@@ -1,0 +1,151 @@
+{
+  "fileName": "BattleArena_박장한_포트폴리오.pptx",
+  "sha256": "db780c603bf2863074036e184c5dca2e13682c0a581b02d1268bcbdac50834ea",
+  "bytes": 42866948,
+  "slideCount": 21,
+  "slides": [
+    {
+      "number": 1,
+      "title": "BattleArena",
+      "links": []
+    },
+    {
+      "number": 2,
+      "title": "프로젝트 개요와 담당 범위",
+      "links": []
+    },
+    {
+      "number": 3,
+      "title": "총구와 조준선의 차이, 업데이트 경계 처리",
+      "links": [
+        "https://github.com/msg1150/UnrealTeamProjectPortfolio/blob/fee0b72e4cc6236acfcb332139613f53fd87b244/Weapon/ProjectileConvergenceComponent.cpp"
+      ]
+    },
+    {
+      "number": 4,
+      "title": "업데이트 사이의 얇은 벽도 이동 구간으로 검사",
+      "links": [
+        "https://github.com/msg1150/UnrealTeamProjectPortfolio/blob/fee0b72e4cc6236acfcb332139613f53fd87b244/Weapon/ProjectileWorldCollisionComponent.cpp"
+      ]
+    },
+    {
+      "number": 5,
+      "title": "전투 NPC가 사용하는 특수 이동 경로",
+      "links": [
+        "https://github.com/msg1150/UnrealTeamProjectPortfolio/blob/2d5b0c733c93af8702e434e984767b7501b3d082/PathLink/PathLinkRouteFinder.cpp"
+      ]
+    },
+    {
+      "number": 6,
+      "title": "포탈 비용을 반영한 경로 탐색과 그래프 재사용",
+      "links": []
+    },
+    {
+      "number": 7,
+      "title": "공간 포탈의 시점 변환과 촬영 부하 제어",
+      "links": [
+        "https://github.com/msg1150/UnrealTeamProjectPortfolio/blob/fee0b72e4cc6236acfcb332139613f53fd87b244/Teleport/PortalViewSubsystem.cpp#L133-L230",
+        "https://github.com/msg1150/UnrealTeamProjectPortfolio/blob/fee0b72e4cc6236acfcb332139613f53fd87b244/Teleport/SeamlessPortalActor.cpp#L363-L389"
+      ]
+    },
+    {
+      "number": 8,
+      "title": "출구 면을 렌더링 시작 경계로 설정",
+      "links": [
+        "https://github.com/msg1150/UnrealTeamProjectPortfolio/blob/fee0b72e4cc6236acfcb332139613f53fd87b244/Teleport/SeamlessPortalTests.cpp#L45-L58",
+        "https://github.com/msg1150/UnrealTeamProjectPortfolio/blob/fee0b72e4cc6236acfcb332139613f53fd87b244/Teleport/SeamlessPortalMath.cpp#L57-L71"
+      ]
+    },
+    {
+      "number": 9,
+      "title": "공간 포탈 통과 과정",
+      "links": []
+    },
+    {
+      "number": 10,
+      "title": "포탈 통과의 서버 확정과 로컬 충돌 처리",
+      "links": []
+    },
+    {
+      "number": 11,
+      "title": "레벨 배치 오류를 플레이 전에 확인하는 도구",
+      "links": []
+    },
+    {
+      "number": 12,
+      "title": "레벨 배치 오류 검증 도구",
+      "links": [
+        "https://github.com/msg1150/UnrealTeamProjectPortfolio/tree/fee0b72e4cc6236acfcb332139613f53fd87b244/GameplayValidator"
+      ]
+    },
+    {
+      "number": 13,
+      "title": "외부 데이터 편집 화면과 입력 검증",
+      "links": []
+    },
+    {
+      "number": 14,
+      "title": "외부 데이터 편집과 Unreal 에셋 동기화",
+      "links": [
+        "https://github.com/msg1150/UnrealTeamProjectPortfolio/tree/fee0b72e4cc6236acfcb332139613f53fd87b244/DataEditor",
+        "https://github.com/msg1150/UnrealTeamProjectPortfolio/tree/fee0b72e4cc6236acfcb332139613f53fd87b244/JsonAssetSync"
+      ]
+    },
+    {
+      "number": 15,
+      "title": "벽 밀착 시 로컬 1인칭 무기 표시 보정",
+      "links": [
+        "https://github.com/msg1150/UnrealTeamProjectPortfolio/blob/fee0b72e4cc6236acfcb332139613f53fd87b244/Weapon/ProjectileFirstPersonRenderingComponent.cpp"
+      ]
+    },
+    {
+      "number": 16,
+      "title": "벽 밀착 상태의 빔 표시 보정",
+      "links": [
+        "https://github.com/msg1150/UnrealTeamProjectPortfolio/blob/fee0b72e4cc6236acfcb332139613f53fd87b244/Weapon/WeaponBeamEffectLibrary.cpp"
+      ]
+    },
+    {
+      "number": 17,
+      "title": "카메라별 캐릭터 외곽선 표시",
+      "links": [
+        "https://github.com/msg1150/UnrealTeamProjectPortfolio/blob/fee0b72e4cc6236acfcb332139613f53fd87b244/CharacterDisplay/ShooterOutlineComponent.cpp"
+      ]
+    },
+    {
+      "number": 18,
+      "title": "사망 아이템 생성과 착지 위치 동기화",
+      "links": [
+        "https://github.com/msg1150/UnrealTeamProjectPortfolio/blob/fee0b72e4cc6236acfcb332139613f53fd87b244/DeathDrop/DeathDropCarrier.cpp"
+      ]
+    },
+    {
+      "number": 19,
+      "title": "사망 카메라 전환과 지형 충돌 보정",
+      "links": [
+        "https://github.com/msg1150/UnrealTeamProjectPortfolio/blob/fee0b72e4cc6236acfcb332139613f53fd87b244/DeathCam/DeathCamActor.cpp"
+      ]
+    },
+    {
+      "number": 20,
+      "title": "사망 후 다시 플레이하기 위한 스폰 위치 선택",
+      "links": [
+        "https://github.com/msg1150/UnrealTeamProjectPortfolio/blob/fee0b72e4cc6236acfcb332139613f53fd87b244/SpawnSelectionSystem/SpawnSelectionComponent.cpp#L546-L614"
+      ]
+    },
+    {
+      "number": 21,
+      "title": "소스 코드와 연락처",
+      "links": [
+        "https://github.com/msg1150/UnrealTeamProjectPortfolio/blob/fee0b72e4cc6236acfcb332139613f53fd87b244/Weapon/ProjectileConvergenceTests.cpp",
+        "https://pjhgameprogramming.notion.site/Game-Programming-Technical-Wiki-3cea186e6315804cb41ff052b738453a",
+        "https://github.com/msg1150/UnrealTeamProjectPortfolio/blob/fee0b72e4cc6236acfcb332139613f53fd87b244/Weapon/ProjectileSplitCollisionTests.cpp",
+        "https://github.com/msg1150/UnrealTeamProjectPortfolio",
+        "https://github.com/msg1150",
+        "https://github.com/msg1150/UnrealTeamProjectPortfolio/blob/fee0b72e4cc6236acfcb332139613f53fd87b244/Teleport/SeamlessPortalTests.cpp",
+        "mailto:wkdgks88009@gmail.com",
+        "https://github.com/msg1150/UnrealTeamProjectPortfolio/blob/fee0b72e4cc6236acfcb332139613f53fd87b244/Weapon/FirstPersonRenderingTests.cpp"
+      ]
+    }
+  ]
+}

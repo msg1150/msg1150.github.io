@@ -249,6 +249,18 @@ details[open]>summary .when-closed,details:not([open])>summary .when-open{displa
 @media(max-width:800px){.inline-project .project-layout{padding-top:30px}.inline-project .project-toc{margin-bottom:32px}}
 @media(max-width:600px){.inline-project-summary{padding:23px 0;gap:12px}.inline-project-summary h2{font-size:32px}.inline-project-summary .eyebrow{font-size:9px}.inline-project-summary>.disclosure-action{font-size:10px}.inline-project{scroll-margin-top:88px}.disclosure>summary{gap:13px}.disclosure-heading>h3{font-size:23px}.disclosure-heading>.eyebrow{font-size:9px}.disclosure-action,.extra summary>.disclosure-action{font-size:10px}.disclosure-body>p{font-size:13px}.inline-project .project-banner{max-height:300px}}
 .source-context{font-size:11px;color:var(--muted);margin-top:12px}
+.project-architecture{font-size:13px;color:var(--muted);line-height:1.9;margin-top:18px}
+.project-scope{display:grid;grid-template-columns:1fr 1fr;gap:38px;padding:30px 0;border-bottom:1px solid var(--line)}
+.project-scope h3{font-size:17px;margin:0 0 17px;letter-spacing:-.03em}
+.project-scope ol,.project-scope ul{margin:0;padding-left:22px;font-size:13px;line-height:1.8}
+.project-scope li+li{margin-top:12px}
+.project-scope a{font-weight:600;text-underline-offset:4px}
+.project-scope a:hover{text-decoration:underline}
+.project-scope p{font-size:12px;color:var(--muted);margin:2px 0 0}
+.implementation-heading{margin-bottom:30px}
+.implementation-heading .eyebrow{color:var(--accent);font-size:10px}
+.implementation-heading h2{font-size:28px;margin-top:8px;letter-spacing:-.04em}
+@media(max-width:600px){.project-scope{grid-template-columns:minmax(0,1fr);gap:26px;padding-block:25px}.project-scope h3{font-size:16px}.project-scope ol,.project-scope ul{font-size:12px}.project-scope p{font-size:11px}.project-architecture{font-size:12px}.implementation-heading h2{font-size:24px}}
 .case-part{margin-top:36px}
 .case-part[id]{scroll-margin-top:112px}
 .case-part h3{font-size:21px;letter-spacing:-.035em;margin-bottom:16px;line-height:1.6}

@@ -1,6 +1,7 @@
 import { readFile, stat } from 'node:fs/promises';
 import path from 'node:path';
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
@@ -49,6 +50,22 @@ for (const page of pages) {
 }
 const home = await htmlAt(path.join(root, 'index.html'));
 for (const project of projects.filter(p => p.published)) {
+  if (project.sourceManifest) {
+    const source = JSON.parse(await readFile(path.join(root, project.sourceManifest), 'utf8'));
+    const ppt = await readFile(path.join(root, project.presentation.split('?')[0]));
+    assert.equal(ppt.length, source.bytes, `PPT download size differs from source: ${project.slug}`);
+    assert.equal(createHash('sha256').update(ppt).digest('hex'), source.sha256, `PPT download differs from source: ${project.slug}`);
+    const covered = [...Object.values(project.sourceSlides).flat(), ...project.cases.flatMap(c=>c.sourceSlides), ...project.extras.flatMap(c=>c.sourceSlides)].sort((a,b)=>a-b);
+    assert.deepEqual(covered, Array.from({length:source.slideCount},(_,i)=>i+1), `PPT slide coverage differs: ${project.slug}`);
+    const detail = await htmlAt(path.join(root, 'projects', project.slug, 'index.html'));
+    const sourceLinks = new Set(source.slides.flatMap(s=>s.links));
+    const repositoryCode = `${project.repository}/`;
+    for (const [name, html] of [['home', home], ['detail', detail]]) {
+      const publicLinks = new Set([...html.matchAll(/href="([^"]+)"/g)].map(m=>m[1].replaceAll('&amp;','&')));
+      for (const url of sourceLinks) assert(publicLinks.has(url), `PPT link missing from ${name}: ${url}`);
+      for (const url of publicLinks) if (url.startsWith(repositoryCode) && /\/(?:blob|tree)\//.test(url)) assert(sourceLinks.has(url), `Code link absent from current PPT in ${name}: ${url}`);
+    }
+  }
   assert(home.includes(`id="project-${project.slug}"`), `Project missing from homepage: ${project.slug}`);
   for (const section of [...project.cases, ...project.extras]) {
     assert(home.includes(`id="${project.slug}-${section.id}"`), `Implementation missing from homepage: ${section.id}`);

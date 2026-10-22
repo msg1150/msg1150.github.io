@@ -19,8 +19,8 @@
     "cover": "cover-20261021.webp",
     "repository": "https://github.com/msg1150/UnrealTeamProjectPortfolio",
     "codeRevision": "fee0b72e4cc6236acfcb332139613f53fd87b244",
-    "presentation": "/assets/downloads/BattleArena-ParkJanghan.pptx?v=20261022-54b8c305",
-    "presentationSize": "40.7 MB",
+    "presentation": "/assets/downloads/BattleArena-ParkJanghan.pptx?v=20261022-db780c60",
+    "presentationSize": "40.9 MB",
     "featured": true,
     "published": true,
     "highlights": [
@@ -32,7 +32,7 @@
       {
         "id": "combat",
         "label": "COMBAT SYSTEM",
-        "title": "총구와 조준선을 연결하고 이동 구간 전체를 검사",
+        "title": "조준 보정과 투사체 충돌",
         "question": "총구와 카메라 조준선의 위치 차이를 어떻게 처리하고, 업데이트 사이의 얇은 벽과 플레이어를 빠뜨리지 않고 검사할까?",
         "implementation": [
           "총구 방향만 사용하면 조준점과 어긋날 수 있어 조준선 위의 합류 지점까지 이동한 뒤 조준선 방향으로 진행합니다. 합류까지의 시간과 프레임의 남은 시간을 나눠 각 방향의 이동을 계산하며, 충돌하면 중단합니다.",
@@ -70,12 +70,13 @@
           3,
           4
         ],
-        "navTitle": "전투 시스템"
+        "navTitle": "전투 시스템",
+        "scope": "조준 보정, 투사체 충돌"
       },
       {
         "id": "navigation",
         "label": "BATTLE NPC NAVIGATION",
-        "title": "포탈 비용을 반영한 전투 NPC 경로 탐색",
+        "title": "전투 NPC 특수 이동 경로 탐색",
         "question": "포탈 통과 비용이 0인 특수 이동과 일반 NavMesh 경로를 비교하고, 반복 요청의 연결 비용을 어떻게 재사용할까?",
         "implementation": [
           "NavMesh의 일반 이동과 포탈·점프패드·점프·낙하 연결을 잇는 상위 그래프에서 경로 비용을 비교합니다. 일반 이동은 NavMesh 경로 길이, 포탈 통과는 비용 0, 점프 등 다른 특수 이동은 연결 거리를 반영합니다.",
@@ -97,11 +98,6 @@
             "label": "경로 탐색 코드",
             "path": "PathLink/PathLinkRouteFinder.cpp",
             "revision": "2d5b0c733c93af8702e434e984767b7501b3d082"
-          },
-          {
-            "label": "그래프 캐시 코드",
-            "path": "PathLink/PathLinkSubsystem.cpp#L560-L697",
-            "revision": "2d5b0c733c93af8702e434e984767b7501b3d082"
           }
         ],
         "sourceSlides": [
@@ -109,12 +105,13 @@
           6
         ],
         "navTitle": "전투 NPC 경로",
-        "sourceContext": "전투 NPC 담당 범위: 특수 이동 경로 탐색 · PathLink 개인 구현 버전 기준"
+        "sourceContext": "전투 NPC 담당 범위: 특수 이동 경로 탐색 · PathLink 개인 구현 버전 기준",
+        "scope": "일반 이동과 포탈 / 점프패드 경로 통합"
       },
       {
         "id": "portal",
         "label": "PORTAL SYSTEM",
-        "title": "공간 포탈의 시점·클리핑과 서버 통과 처리",
+        "title": "공간 포탈의 화면과 통과 처리",
         "question": "가상 카메라와 출구 사이의 벽이 화면을 가리지 않게 하면서, 서버의 이동 확정과 로컬 플레이어의 벽 충돌 처리를 어떻게 연결할까?",
         "implementation": [
           "입구 기준의 카메라 위치를 출구 좌표로 변환하고, 포탈 경계로 비대칭 투영(Off-axis projection)을 계산합니다. SceneCapture 결과를 포탈 표면에 표시해 보는 위치에 따라 출구 화면이 달라지도록 구성했습니다.",
@@ -145,14 +142,6 @@
           {
             "label": "촬영 스케줄링",
             "path": "Teleport/PortalViewSubsystem.cpp#L133-L230"
-          },
-          {
-            "label": "통과 판정",
-            "path": "Teleport/SeamlessPortalActor.cpp#L497-L610"
-          },
-          {
-            "label": "통과 관리",
-            "path": "Teleport/SeamlessPortalTraversalSubsystem.cpp"
           },
           {
             "label": "클리핑 투영 행렬",
@@ -232,12 +221,13 @@
               }
             ]
           }
-        ]
+        ],
+        "scope": "위치 / 속도 / 시점 변환과 출구 화면"
       },
       {
         "id": "level-validator",
         "label": "EDITOR VALIDATION",
-        "title": "배치 오류를 찾고, 수정할 오브젝트로 바로 이동",
+        "title": "레벨 배치 오류 검증 도구",
         "question": "플레이 전에 포탈 출구 누락이나 잘못 연결된 이동 경로를 확인하려면?",
         "implementation": [
           "포탈, 점프패드, 이동 경로 연결을 모듈별로 검사합니다. 새 검사 대상을 등록해 확장할 수 있도록 구성하고 Reflection과 네이티브 연동으로 설정값을 확인합니다.",
@@ -269,12 +259,13 @@
           "등록된 검사 모듈 실행",
           "Slate 오류 목록",
           "Focus 대상·시점 이동"
-        ]
+        ],
+        "scope": "배치 오류 검사와 대상 오브젝트 탐색"
       },
       {
         "id": "data-tools",
         "label": "DATA PIPELINE & TOOLS",
-        "title": "Unreal 밖에서 편집하고, 검증한 데이터를 연결",
+        "title": "외부 데이터 편집과 Unreal 에셋 동기화",
         "question": "Unreal Editor를 열지 않고 수치를 편집하면서 데이터 타입과 저장 시점의 차이를 관리하려면?",
         "implementation": [
           "Reflection으로 타입, Enum, 입력 범위를 추출합니다. .NET 8 WPF 편집기는 Manifest를 읽어 타입과 중첩 구조에 맞는 화면을 구성합니다.",
@@ -319,12 +310,13 @@
           13,
           14
         ],
-        "navTitle": "데이터 도구"
+        "navTitle": "데이터 도구",
+        "scope": "Reflection / WPF / JSON 데이터 흐름"
       }
     ],
     "extras": [
       {
-        "title": "벽 밀착 시 1인칭 무기 표시 보정",
+        "title": "벽 밀착 시 로컬 1인칭 무기 표시 보정",
         "text": "메시 경계, 캐릭터 충돌 영역, FOV로 스케일을 계산해 로컬 플레이어의 팔·무기·총구 효과에 적용합니다. Near Clip과 1인칭 FOV는 종료 시 복구합니다.",
         "limit": "현재 적용 범위는 로컬 1인칭 표시입니다. 외부 시점의 무기와 벽 겹침은 후속 검토 항목입니다.",
         "comparison": {
@@ -418,8 +410,8 @@
         ]
       },
       {
-        "title": "사망 아이템 생성과 위치 동기화",
-        "text": "서버가 드롭 아이템의 접촉 지점과 높이를 보정해 착지 위치를 결정하고 클라이언트에 최종 위치를 전달합니다. 버프는 기존 서버 종료 시각을 유지합니다.",
+        "title": "사망 아이템 생성과 착지 위치 동기화",
+        "text": "사망 시 무기와 유효한 버프를 수집하고 물리 이동용 액터와 아이템을 생성합니다. 서버가 접촉 지점과 높이를 보정해 착지 위치를 결정하고 클라이언트에 최종 위치를 전달합니다. 버프는 기존 서버 종료 시각을 유지합니다.",
         "images": [
           {
             "file": "drop-a-20261022.webp",
@@ -453,8 +445,8 @@
         ]
       },
       {
-        "title": "사망 카메라와 지형 충돌 보정",
-        "text": "사망한 플레이어의 소유자에게만 카메라를 전환합니다. 지형 충돌 시 벽면을 따라 위치를 보정하고 사망 기준점을 넘어가지 않게 제한합니다. 새 캐릭터가 준비되면 플레이 시점으로 복귀합니다.",
+        "title": "사망 카메라 전환과 지형 충돌 보정",
+        "text": "사망한 플레이어의 소유자에게만 카메라를 전환하고, 사망 위치에서 공격자 반대편을 보도록 배치합니다. 지형 충돌 시 벽면을 따라 위치를 보정하고 사망 기준점을 넘어가지 않게 제한합니다. 새 캐릭터가 준비되면 플레이 시점으로 복귀합니다.",
         "video": {
           "file": "death-camera.mp4",
           "poster": "death-camera-poster.webp",
@@ -525,6 +517,8 @@
       "sourceAndContact": [
         21
       ]
-    }
+    },
+    "sourceManifest": "content/sources/battlearena.json",
+    "architecture": "컴포넌트와 서브시스템에 핵심 처리를 분리하고 Blueprint 연출과 연결했습니다."
   }
 ]
