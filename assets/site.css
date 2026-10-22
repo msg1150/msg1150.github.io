@@ -439,13 +439,17 @@ details[open]>summary .when-closed,details:not([open])>summary .when-open{displa
 .profile-email{display:inline-block;font-size:12px;color:var(--muted);margin-top:15px;overflow-wrap:anywhere}
 .profile-email:hover{color:var(--accent)}
 .profile-skill-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:36px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:45px;padding-block:30px}
-.profile-skill{min-width:0}
+.profile-skill{min-width:0;display:flex;flex-direction:column}
 .profile-skill-title{display:flex;gap:11px;align-items:center}
 .profile-skill-title>.icon{color:var(--accent);width:24px;height:24px}
 .profile-skill-title h2{font-size:18px;letter-spacing:-.025em;line-height:1.6}
 .profile-skill>p{font-size:13px;line-height:1.95;color:var(--muted);margin-top:17px}
 .skill-case-link{display:inline-flex;align-items:center;gap:12px;font-size:11px;font-weight:600;margin-top:16px}
 .skill-case-link:hover{color:var(--accent)}
+.profile-skill>.skill-case-link{align-self:start;margin-top:auto;padding-top:16px}
+.profile-skill>.technology-icons{min-height:44px;align-content:start}
+.profile-skill>.technology-icons>.technology-text{display:flex;align-items:center;min-height:44px}
+@supports(grid-template-rows:subgrid){@media(min-width:601px){.unified-profile .profile-skill-grid{grid-template-rows:auto auto 1fr auto;row-gap:0}.profile-skill{display:grid;grid-template-rows:subgrid;grid-row:span 4}}}
 .technology-icons{list-style:none;padding:0;margin:16px 0 0;display:flex;align-items:flex-start;flex-wrap:wrap;gap:10px}
 .technology-icons li{margin:0;min-width:0}
 .technology-symbol{position:relative;display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid #d8ddd0;border-radius:7px;color:var(--ink);background:#fff;cursor:help}
