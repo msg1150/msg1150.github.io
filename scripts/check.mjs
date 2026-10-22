@@ -51,6 +51,12 @@ for (const page of pages) {
 const home = await htmlAt(path.join(root, 'index.html'));
 assert(home.includes('id="profile"'), 'Profile must be included on homepage');
 assert(!/href="\/resume\//.test(home), 'Homepage profile navigation should stay on homepage');
+assert(home.includes('<section id="profile" class="wrap unified-profile">'), 'Top section must be the unified profile');
+assert(!home.includes('프로필 보기'), 'Unified profile must not link to a duplicate profile');
+assert(!home.includes('class="profile-disclosure'), 'Duplicate profile panel must be removed');
+for (const skill of profile.skills) for (const technology of skill.tech.split(' · ')) {
+  assert(home.includes(`aria-label="${technology}" data-label="${technology}"`), `Technology icon needs a name: ${technology}`);
+}
 for (const project of projects.filter(p => p.published)) {
   if (project.sourceManifest) {
     const source = JSON.parse(await readFile(path.join(root, project.sourceManifest), 'utf8'));

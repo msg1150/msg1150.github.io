@@ -1,4 +1,10 @@
 const paths = {
+  'chevron-up': '<path d="m5 15 7-7 7 7"/>',
+  'chevron-down': '<path d="m5 9 7 7 7-7"/>',
+  menu: '<path d="M4 6h16M4 12h16M4 18h16"/>',
+  gamepad: '<path d="M7 7h10c3 0 5 11 3 12-2 1-4-4-6-4h-4c-2 0-4 5-6 4C2 18 4 7 7 7Z"/><path d="M8 9v5m-2.5-2.5h5M16 10h.1M18 13h.1"/>',
+  route: '<circle cx="5" cy="5" r="2"/><circle cx="19" cy="19" r="2"/><path d="M7 5h9a4 4 0 0 1 0 8H8a3 3 0 0 0 0 6h9"/>',
+  tools: '<path d="m14 7-8 8-3 1 1-3 8-8m2 2 3-1 2-3a6 6 0 0 1-7 8M5 3l16 16-2 2L3 5V3h2Z"/>',
   external: '<path d="M14 4h6v6M20 4l-9 9"/><path d="M20 14v6H4V4h6"/>',
   down: '<path d="M12 4v16m-6-6 6 6 6-6"/>',
   up: '<path d="M12 20V4m-6 6 6-6 6 6"/>',
