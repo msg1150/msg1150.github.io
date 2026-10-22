@@ -1,0 +1,359 @@
+{
+  "presentationSha256": "db780c603bf2863074036e184c5dca2e13682c0a581b02d1268bcbdac50834ea",
+  "method": "PPT embedded images; static images use the slide srcRect crop, lossless PNG; GIF bytes are original and crop is applied in the viewport.",
+  "images": [
+    {
+      "name": "cover",
+      "slide": 1,
+      "sourceMedia": "ppt/media/image1.png",
+      "sourceSha256": "cd5850bd66e0789646ccdc82df14a758ae9551e2812c2d1004015ae8e4aaaf3f",
+      "crop": {},
+      "output": "ppt-cover-db780c60.png",
+      "outputSha256": "39e163842ffe3140bec4f5d27268254d4048a44844b1109f096953a0d4d59f43",
+      "width": 703,
+      "height": 1153
+    },
+    {
+      "name": "shooting",
+      "slide": 3,
+      "sourceMedia": "ppt/media/image5.gif",
+      "sourceSha256": "2b85a324f57310f1587ebd7f6dd690ec10f5710c0704e29501d0e17431ea8d3f",
+      "crop": {},
+      "output": "ppt-shooting-db780c60.gif",
+      "outputSha256": "2b85a324f57310f1587ebd7f6dd690ec10f5710c0704e29501d0e17431ea8d3f",
+      "width": 864,
+      "height": 308
+    },
+    {
+      "name": "collision",
+      "slide": 4,
+      "sourceMedia": "ppt/media/image6.png",
+      "sourceSha256": "716ddc494c0ea92d1781b6424a2ab1dad91c191a33e5cde917ae57a1008f55a3",
+      "crop": {
+        "l": "19305",
+        "t": "16820",
+        "r": "13127",
+        "b": "8257"
+      },
+      "output": "ppt-collision-db780c60.png",
+      "outputSha256": "6f2742b600687fd394df4b02c3a47ce5987f3aff15c76da708d261631172bc3c",
+      "width": 700,
+      "height": 490
+    },
+    {
+      "name": "navigation",
+      "slide": 5,
+      "sourceMedia": "ppt/media/image7.png",
+      "sourceSha256": "1449a226b47d8ccc5027a7356df9907046a0d3ea750fb39044ed6adb5c1993c8",
+      "crop": {},
+      "output": "ppt-navigation-db780c60.png",
+      "outputSha256": "219f4e1e31e7aa05733a01a096c3564c77fb90038c33419594e18ca112ba181e",
+      "width": 464,
+      "height": 294
+    },
+    {
+      "name": "portal-front",
+      "slide": 7,
+      "sourceMedia": "ppt/media/image8.png",
+      "sourceSha256": "a58a0ff3ba08d0e1eb604fbbb711be5e2a1c6e2252d0f84bcf7d6a354df6ef3b",
+      "crop": {
+        "l": "20372",
+        "t": "5736",
+        "r": "18513",
+        "b": "2294"
+      },
+      "output": "ppt-portal-front-db780c60.png",
+      "outputSha256": "2c50fbf4f57ab97af869e17e1eea152e2363ffec2c834aa201bc027702928a8e",
+      "width": 855,
+      "height": 481
+    },
+    {
+      "name": "portal-side",
+      "slide": 7,
+      "sourceMedia": "ppt/media/image9.png",
+      "sourceSha256": "1bd431ae706f3d1b8e7c664e739b807b39f8218953057541f938c5880ab9b45c",
+      "crop": {
+        "l": "17806",
+        "t": "4717",
+        "r": "19516",
+        "b": "1887"
+      },
+      "output": "ppt-portal-side-db780c60.png",
+      "outputSha256": "2876d6ba7503d80607566bc30197da1fe178e8e4f6c2383bad60abb8ddf6eab8",
+      "width": 880,
+      "height": 495
+    },
+    {
+      "name": "portal-traversal",
+      "slide": 9,
+      "sourceMedia": "ppt/media/image10.gif",
+      "sourceSha256": "fa183ac06cba7c641d81e12d4ef0954baa861908171dc25a4f66e49bd0617f4d",
+      "crop": {},
+      "output": "ppt-portal-traversal-db780c60.gif",
+      "outputSha256": "fa183ac06cba7c641d81e12d4ef0954baa861908171dc25a4f66e49bd0617f4d",
+      "width": 1000,
+      "height": 374
+    },
+    {
+      "name": "portal-entry",
+      "slide": 9,
+      "sourceMedia": "ppt/media/image11.png",
+      "sourceSha256": "f8436b648deebedbc04ea26cecf38e181daa1a91b940b13acf237093dc61a96b",
+      "crop": {},
+      "output": "ppt-portal-entry-db780c60.png",
+      "outputSha256": "863bdd49fd9bd78d744ade9a61c3456c6b5f8488d367f740804f532dd27d32cc",
+      "width": 1398,
+      "height": 524
+    },
+    {
+      "name": "portal-exit",
+      "slide": 9,
+      "sourceMedia": "ppt/media/image12.png",
+      "sourceSha256": "28e1b9082f31c21237af7703584bd31150a8767e19d5f560f357ad83ef93fac4",
+      "crop": {},
+      "output": "ppt-portal-exit-db780c60.png",
+      "outputSha256": "56a32b7c3d90a917b25abf6fa00cb19de842aa249f23e74eb551997ef2549b06",
+      "width": 1398,
+      "height": 524
+    },
+    {
+      "name": "level-validator",
+      "slide": 11,
+      "sourceMedia": "ppt/media/image13.png",
+      "sourceSha256": "8895922d53c6231f16082114e25f6da235d6e597e42ebdc21ea0412b47cbaef8",
+      "crop": {
+        "l": "13226",
+        "t": "6883",
+        "r": "661",
+        "b": "5736"
+      },
+      "output": "ppt-level-validator-db780c60.png",
+      "outputSha256": "8ab35f7f07bd4b277ddbef51e7003f64a3eaf845beaf27e6a35f934214820aaa",
+      "width": 1172,
+      "height": 457
+    },
+    {
+      "name": "data-editor",
+      "slide": 13,
+      "sourceMedia": "ppt/media/image14.png",
+      "sourceSha256": "7dd077198c82480486e376599b1d78ad1357df6c80c50ecb43850b7abbcdd190",
+      "crop": {
+        "t": "5576",
+        "r": "234",
+        "b": "35564"
+      },
+      "output": "ppt-data-editor-db780c60.png",
+      "outputSha256": "6d8992434210429bd7eef39675e02eec8c6feaaee5389c22a3d9c689898f7249",
+      "width": 1280,
+      "height": 475
+    },
+    {
+      "name": "data-validation",
+      "slide": 13,
+      "sourceMedia": "ppt/media/image15.png",
+      "sourceSha256": "decaf9f6c3e87eb0b8306f8a465dd125672c97790f73c216f7ed1b90ae7e3ccd",
+      "crop": {
+        "l": "35464",
+        "t": "46964",
+        "r": "39127",
+        "b": "33829"
+      },
+      "output": "ppt-data-validation-db780c60.png",
+      "outputSha256": "4d6ea695bbfb94ce6eecb99f08faae6e36f0dce8e8b346fdbac1e1146d22e38f",
+      "width": 326,
+      "height": 155
+    },
+    {
+      "name": "fpr-before",
+      "slide": 15,
+      "sourceMedia": "ppt/media/image17.png",
+      "sourceSha256": "b877dba5dcd845c7177d0e1c37e0fc37ebfa3e39f2ff84e4c6663ab993dc3966",
+      "crop": {
+        "l": "33210",
+        "t": "30444",
+        "r": "590",
+        "b": "2016"
+      },
+      "output": "ppt-fpr-before-db780c60.png",
+      "outputSha256": "6bb698a0d016c770eae89facd82c1582889606cfba5eb4844c8907d78366f255",
+      "width": 897,
+      "height": 335
+    },
+    {
+      "name": "fpr-after",
+      "slide": 15,
+      "sourceMedia": "ppt/media/image18.png",
+      "sourceSha256": "e812c1d84e6bfb4c462532a2443c78b66edb1199c003161dc8e8e89b78e3052c",
+      "crop": {},
+      "output": "ppt-fpr-after-db780c60.png",
+      "outputSha256": "cf50a3231b292b7f83d17bc67b0361e02a704a448919d69e6179cd50d5a0fb6f",
+      "width": 897,
+      "height": 335
+    },
+    {
+      "name": "beam-before",
+      "slide": 16,
+      "sourceMedia": "ppt/media/image19.gif",
+      "sourceSha256": "5dfce7c830785bb62531b52fd3381cd65a1675ef31273103fc5f5de9201e6148",
+      "crop": {
+        "t": "17000",
+        "b": "8000"
+      },
+      "output": "ppt-beam-before-db780c60.gif",
+      "outputSha256": "5dfce7c830785bb62531b52fd3381cd65a1675ef31273103fc5f5de9201e6148",
+      "width": 720,
+      "height": 406
+    },
+    {
+      "name": "beam-after",
+      "slide": 16,
+      "sourceMedia": "ppt/media/image20.gif",
+      "sourceSha256": "f491bd7ce2a450de3c46b3b64349e7ea2d19fe7b1fad1773501a425784f035c2",
+      "crop": {
+        "t": "17000",
+        "b": "8000"
+      },
+      "output": "ppt-beam-after-db780c60.gif",
+      "outputSha256": "f491bd7ce2a450de3c46b3b64349e7ea2d19fe7b1fad1773501a425784f035c2",
+      "width": 720,
+      "height": 406
+    },
+    {
+      "name": "outline-a",
+      "slide": 17,
+      "sourceMedia": "ppt/media/image23.png",
+      "sourceSha256": "8b34c84a4717bb6352d58e23ac9b851e5e39f1e64bbbfeb22577646557a69292",
+      "crop": {},
+      "output": "ppt-outline-a-db780c60.png",
+      "outputSha256": "bbceb6dacd9bf361e183981f3b6d56989b15eff0404d535bb5fb695c232eda7b",
+      "width": 638,
+      "height": 225
+    },
+    {
+      "name": "outline-b",
+      "slide": 17,
+      "sourceMedia": "ppt/media/image24.png",
+      "sourceSha256": "5fb3a3f4ff3fcf8ee5d342e5fe66c7601dc6a60f6b0893edf66db8c9a53571fb",
+      "crop": {},
+      "output": "ppt-outline-b-db780c60.png",
+      "outputSha256": "fc1580ed727c9b0ddd6b80c4c5fd5422e6d223b33f52aea225b2dd598af7cc77",
+      "width": 636,
+      "height": 225
+    },
+    {
+      "name": "drop-a",
+      "slide": 18,
+      "sourceMedia": "ppt/media/image25.png",
+      "sourceSha256": "b076d8778212d9188c805545f65bfe9a3cc32c36b40d1f1e5696c3603684381c",
+      "crop": {},
+      "output": "ppt-drop-a-db780c60.png",
+      "outputSha256": "398fd420daa417a12ed5ae1e6a0cc55d93f45f1ad6d892d2c4696a5ae06a1cb8",
+      "width": 550,
+      "height": 195
+    },
+    {
+      "name": "drop-b",
+      "slide": 18,
+      "sourceMedia": "ppt/media/image26.png",
+      "sourceSha256": "493d7c2ec6c27d39a984b4079f3d9bb2a6b2e6bd34a0ca37d172751375768e4e",
+      "crop": {},
+      "output": "ppt-drop-b-db780c60.png",
+      "outputSha256": "9acefec0a35cccff95b260f482841eb972bf318b2d11399db59e40494ed2a66f",
+      "width": 550,
+      "height": 195
+    },
+    {
+      "name": "death-camera",
+      "slide": 19,
+      "sourceMedia": "ppt/media/image27.gif",
+      "sourceSha256": "7cba78c8e8a8e75fa4fe14b1dc7d4926347db59c18d187cc953b34114bdd1d3e",
+      "crop": {},
+      "output": "ppt-death-camera-db780c60.gif",
+      "outputSha256": "7cba78c8e8a8e75fa4fe14b1dc7d4926347db59c18d187cc953b34114bdd1d3e",
+      "width": 864,
+      "height": 342
+    },
+    {
+      "name": "death-camera-editor",
+      "slide": 19,
+      "sourceMedia": "ppt/media/image28.jpeg",
+      "sourceSha256": "fcccff67c95c377a3e48f63ad0e283119934cd6378926d0fffef0f4d2b8a6d41",
+      "crop": {
+        "l": "12969",
+        "t": "28472",
+        "r": "41602",
+        "b": "39583"
+      },
+      "output": "ppt-death-camera-editor-db780c60.png",
+      "outputSha256": "d86a7344bb5e5964e2c37aeebd637d9c768c529980dcc3c6c9ba2a44e29da4a1",
+      "width": 1163,
+      "height": 460
+    },
+    {
+      "name": "beam-before-poster",
+      "slide": 16,
+      "sourceMedia": "ppt/media/image21.png",
+      "sourceSha256": "4978fc13ebfaf8154ca1bbeb00976ae613ae95f16e18505835e24037fddea667",
+      "crop": {
+        "t": "17000",
+        "b": "8000"
+      },
+      "output": "ppt-beam-before-poster-db780c60.png",
+      "outputSha256": "4978fc13ebfaf8154ca1bbeb00976ae613ae95f16e18505835e24037fddea667",
+      "width": 640,
+      "height": 360,
+      "cropAtDisplay": true
+    },
+    {
+      "name": "beam-after-poster",
+      "slide": 16,
+      "sourceMedia": "ppt/media/image22.png",
+      "sourceSha256": "037d9e04d15199270a55101f986b9145ef655562508ba104e679f040b879e058",
+      "crop": {
+        "t": "17000",
+        "b": "8000"
+      },
+      "output": "ppt-beam-after-poster-db780c60.png",
+      "outputSha256": "037d9e04d15199270a55101f986b9145ef655562508ba104e679f040b879e058",
+      "width": 640,
+      "height": 360,
+      "cropAtDisplay": true
+    },
+    {
+      "name": "shooting-poster",
+      "slide": 3,
+      "sourceMedia": "ppt/media/image5.gif",
+      "sourceSha256": "2b85a324f57310f1587ebd7f6dd690ec10f5710c0704e29501d0e17431ea8d3f",
+      "crop": {},
+      "output": "ppt-shooting-poster-db780c60.png",
+      "outputSha256": "a87a560c32c5cb0da9b51cd5a9ccc6b25e162f129637f319b0608b7db05c2bf4",
+      "width": 864,
+      "height": 308,
+      "frame": 0
+    },
+    {
+      "name": "portal-traversal-poster",
+      "slide": 9,
+      "sourceMedia": "ppt/media/image10.gif",
+      "sourceSha256": "fa183ac06cba7c641d81e12d4ef0954baa861908171dc25a4f66e49bd0617f4d",
+      "crop": {},
+      "output": "ppt-portal-traversal-poster-db780c60.png",
+      "outputSha256": "5278b18356f938a71cd1c9ff8b984a0cac02e15fe56be9696ecc934322e1c914",
+      "width": 1000,
+      "height": 374,
+      "frame": 0
+    },
+    {
+      "name": "death-camera-poster",
+      "slide": 19,
+      "sourceMedia": "ppt/media/image27.gif",
+      "sourceSha256": "7cba78c8e8a8e75fa4fe14b1dc7d4926347db59c18d187cc953b34114bdd1d3e",
+      "crop": {},
+      "output": "ppt-death-camera-poster-db780c60.png",
+      "outputSha256": "e7eaa858d02cec8c99766f6b465637276b0a2f0a236fe3346460d45125ac7c6a",
+      "width": 864,
+      "height": 342,
+      "frame": 0
+    }
+  ]
+}

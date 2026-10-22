@@ -316,6 +316,20 @@ details[open]>summary .when-closed,details:not([open])>summary .when-open{displa
 .implementation-media .animation-gallery{margin:0}
 .implementation-media figcaption{flex-wrap:wrap;gap:5px 12px}
 .implementation-media .animation-controls{flex-wrap:wrap}
+.media-gallery{display:grid;gap:14px;min-width:0}
+.media-gallery.paired{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}
+.media-gallery>figure{min-width:0}
+.media-gallery .image-link{display:flex;justify-content:center;align-items:center}
+.media-gallery .image-link img{width:auto;max-width:100%;height:auto;max-height:280px;object-fit:contain}
+.media-gallery.paired .image-link img{max-height:220px}
+.media-gallery figcaption{line-height:1.7;margin-top:8px}
+.animation-viewport{--media-max-height:280px;position:relative;width:min(100%,calc(var(--media-max-height) * var(--media-ratio)));aspect-ratio:var(--media-ratio);margin-inline:auto;overflow:hidden;border-radius:3px;background:#171b17}
+.animation-viewport>img{position:absolute;width:var(--crop-width);max-width:none;height:var(--crop-height);left:var(--crop-left);top:var(--crop-top)}
+.implementation-media .animation-gallery.paired{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.contact-section.contact-compact{padding-block:26px;background:var(--paper);color:var(--ink);border-top:1px solid var(--line)}
+.contact-icons{display:flex;justify-content:center;align-items:center;gap:12px}
+.contact-icons .icon-button:hover{background:var(--soft)}
+@media(max-width:600px){.media-gallery{gap:10px}.media-gallery.paired .image-link img{max-height:180px}.media-gallery figcaption{font-size:10px}.animation-viewport{--media-max-height:240px}.implementation-media .animation-gallery.paired{grid-template-columns:repeat(2,minmax(0,1fr))}.contact-section.contact-compact{padding-block:22px}}
 .implementation-copy .data-flow{flex-wrap:wrap}
 .implementation-copy .data-flow li{flex:1 1 100px}
 .implementation-copy .data-flow li+li{border:0;box-shadow:inset 1px 0 #cbd1c0}
@@ -328,9 +342,9 @@ details[open]>summary .when-closed,details:not([open])>summary .when-open{displa
 .has-supporting-diagram>.implementation-media{grid-column:2;grid-row:1 / span 2}
 .implementation-support{min-width:0;grid-column:1;grid-row:2;align-self:start}
 @media(max-width:800px){.implementation-row.has-supporting-diagram{grid-template-rows:auto}.has-supporting-diagram>.implementation-media{grid-column:1;grid-row:2}.implementation-support{grid-column:1;grid-row:3}}
-@media(max-width:1000px){.project-overview,.implementation-row.has-media{gap:30px;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.implementation-media .animation-gallery.paired{grid-template-columns:1fr}}
+@media(max-width:1000px){.project-overview,.implementation-row.has-media{gap:30px;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
 @media(max-width:800px){.project-overview,.implementation-row.has-media{grid-template-columns:minmax(0,1fr);gap:26px}.project-overview-media{width:100%}.project-overview-media .project-banner{max-height:420px}.project-toc nav{gap:5px 18px}.implementation-media .animation-gallery.paired{grid-template-columns:repeat(2,minmax(0,1fr))}.implementation-copy .problem{margin-bottom:22px}}
-@media(max-width:600px){.project-overview{margin-top:20px}.project-overview-copy .project-lead{font-size:14px}.implementation-copy>p{font-size:13px}.implementation-media .animation-gallery.paired{grid-template-columns:minmax(0,1fr)}.implementation-media{gap:22px}.project-toc nav a{font-size:10px}.implementation-copy .source-context{font-size:10px}.disclosure-body>.implementation-row{margin-top:22px}}
+@media(max-width:600px){.project-overview{margin-top:20px}.project-overview-copy .project-lead{font-size:14px}.implementation-copy>p{font-size:13px}.implementation-media{gap:22px}.project-toc nav a{font-size:10px}.implementation-copy .source-context{font-size:10px}.disclosure-body>.implementation-row{margin-top:22px}}
 .explain-diagram{padding:22px;background:#fff;border:1px solid #d6dbce;border-radius:6px;color:var(--ink)}
 .diagram-heading>span{font-size:10px;color:var(--accent);font-weight:700;letter-spacing:.035em}
 .diagram-heading h4{font-size:16px;line-height:1.7;margin:5px 0 18px;letter-spacing:-.035em}

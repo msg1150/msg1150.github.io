@@ -16,7 +16,7 @@
     ],
     "summary": "조준·투사체 충돌과 공간 포탈, 전투 NPC 특수 이동 경로 탐색, 레벨 배치 검증·외부 데이터 편집 도구를 구현했습니다.",
     "description": "Unreal Engine 5.6.1 기반의 3D 멀티플레이 슈팅 팀 프로젝트입니다. 투사체 이동·충돌 판정과 포탈, 레벨 검증·외부 데이터 편집을 담당했으며, 전투 NPC에서는 특수 이동 경로 탐색을 구현했습니다.",
-    "cover": "cover-20261021.webp",
+    "cover": "ppt-cover-db780c60.png",
     "repository": "https://github.com/msg1150/UnrealTeamProjectPortfolio",
     "codeRevision": "fee0b72e4cc6236acfcb332139613f53fd87b244",
     "presentation": "/assets/downloads/BattleArena-ParkJanghan.pptx?v=20261022-db780c60",
@@ -39,13 +39,6 @@
           "한 프레임 안에서 합류하면 합류까지의 시간과 남은 시간을 나눠 계산합니다. 충돌하면 중단합니다."
         ],
         "result": "합류 전후의 이동 시간을 나눠 처리하고, 이동 구간 전체에서 가장 먼저 닿은 충돌을 선택합니다. 플레이어 판정은 서버에서 검사합니다.",
-        "video": {
-          "file": "shooting.mp4",
-          "poster": "shooting-poster.webp",
-          "caption": "조준선과 총구 위치가 다른 상태에서의 발사 장면",
-          "width": 864,
-          "height": 308
-        },
         "links": [
           {
             "label": "투사체 이동 코드",
@@ -99,11 +92,11 @@
             ],
             "images": [
               {
-                "file": "collision.webp",
+                "file": "ppt-collision-db780c60.png",
                 "alt": "서로 다른 크기의 플레이어 명중 Sphere와 환경 충돌 Sphere",
                 "caption": "플레이어 명중 범위와 환경 충돌 범위를 분리",
-                "width": 1036,
-                "height": 654
+                "width": 700,
+                "height": 490
               }
             ],
             "highlights": [
@@ -116,6 +109,17 @@
         "highlights": [
           "합류 지점",
           "합류까지의 시간과 남은 시간을 나눠 계산"
+        ],
+        "animations": [
+          {
+            "file": "ppt-shooting-db780c60.gif",
+            "poster": "ppt-shooting-poster-db780c60.png",
+            "width": 864,
+            "height": 308,
+            "title": "조준 후 발사 장면",
+            "caption": "조준선과 총구 위치가 다른 상태에서의 발사 장면",
+            "alt": "조준선과 총구 위치가 다른 상태에서의 발사 장면"
+          }
         ]
       },
       {
@@ -131,11 +135,11 @@
         "result": "전투 NPC의 특수 이동 경로에서 일반 이동과 비용 0의 포탈 연결을 함께 비교하고, 정적 그래프와 요청별 연결 비용을 조합합니다.",
         "images": [
           {
-            "file": "navigation.webp",
+            "file": "ppt-navigation-db780c60.png",
             "alt": "전투 NPC의 현재 이동 경로와 특수 이동 연결",
             "caption": "흰색: 현재 경로 / 빨강: 특수 이동 연결 / 파랑: 이후 경로",
-            "width": 1155,
-            "height": 856
+            "width": 464,
+            "height": 294
           }
         ],
         "links": [
@@ -175,18 +179,18 @@
         "result": "카메라 위치에 맞춘 출구 화면과 출구 면 클리핑을 구성합니다. 이동은 서버가 확정하며 소유 클라이언트의 예상은 통과 전후 벽 충돌 처리에만 사용합니다.",
         "images": [
           {
-            "file": "portal-front.webp",
+            "file": "ppt-portal-front-db780c60.png",
             "alt": "정면에서 본 공간 포탈의 출구 전경",
             "caption": "정면 시점의 출구 화면",
-            "width": 1399,
-            "height": 523
+            "width": 855,
+            "height": 481
           },
           {
-            "file": "portal-side.webp",
+            "file": "ppt-portal-side-db780c60.png",
             "alt": "측면으로 이동했을 때 달라진 공간 포탈 내부 시야",
             "caption": "측면 시점에서 달라지는 포탈 내부 시야",
-            "width": 1404,
-            "height": 530
+            "width": 880,
+            "height": 495
           }
         ],
         "links": [
@@ -246,25 +250,25 @@
             ],
             "animations": [
               {
-                "file": "portal-traversal.gif",
-                "poster": "portal-entry.webp",
+                "file": "ppt-portal-traversal-db780c60.gif",
+                "poster": "ppt-portal-traversal-poster-db780c60.png",
                 "title": "공간 포탈 통과 과정",
                 "alt": "입구 접근부터 출구 도착까지의 공간 포탈 통과 애니메이션",
                 "caption": "PPT의 통과 과정 GIF · 재생 버튼을 눌러 확인",
-                "width": 1398,
-                "height": 524
+                "width": 1000,
+                "height": 374
               }
             ],
             "images": [
               {
-                "file": "portal-entry.webp",
+                "file": "ppt-portal-entry-db780c60.png",
                 "alt": "포탈 통과 전 입구에 접근한 위치와 시점",
                 "caption": "통과 전 · 입구 접근",
                 "width": 1398,
                 "height": 524
               },
               {
-                "file": "portal-exit.webp",
+                "file": "ppt-portal-exit-db780c60.png",
                 "alt": "포탈 통과 후 출구 공간의 위치와 시점",
                 "caption": "통과 후 · 출구 공간",
                 "width": 1398,
@@ -296,11 +300,11 @@
         "result": "검사 결과에서 수정할 오브젝트와 레벨 내 위치를 바로 확인할 수 있도록 연결했습니다.",
         "images": [
           {
-            "file": "level-validator.webp",
+            "file": "ppt-level-validator-db780c60.png",
             "alt": "레벨 검증 오류 목록과 선택된 이동 경로 오브젝트",
             "caption": "검출 예시: 이동 경로 입구가 지면에서 50cm 떨어진 배치",
-            "width": 1361,
-            "height": 523
+            "width": 1172,
+            "height": 457
           }
         ],
         "links": [
@@ -338,18 +342,18 @@
         "result": "Unreal 속성 정보에서 외부 편집 화면과 검증 규칙을 구성하고, 실행 환경에 따라 적용과 저장을 구분합니다.",
         "images": [
           {
-            "file": "data-editor.webp",
+            "file": "ppt-data-editor-db780c60.png",
             "alt": "데이터 행과 필드값을 편집하는 WPF 데이터 에디터",
             "caption": "Manifest를 기반으로 구성한 외부 데이터 편집기",
-            "width": 1283,
-            "height": 807
+            "width": 1280,
+            "height": 475
           },
           {
-            "file": "data-validation.webp",
+            "file": "ppt-data-validation-db780c60.png",
             "alt": "잘못된 숫자 입력의 저장을 차단한 검증 메시지",
             "caption": "숫자 필드 입력 오류를 표시하고 저장을 중단",
-            "width": 1283,
-            "height": 807
+            "width": 326,
+            "height": 155
           }
         ],
         "links": [
@@ -386,8 +390,8 @@
         "text": "메시 경계, 캐릭터 충돌 영역, FOV로 스케일을 계산해 로컬 플레이어의 팔·무기·총구 효과에 적용합니다. Near Clip과 1인칭 FOV는 종료 시 복구합니다.",
         "limit": "현재 적용 범위는 로컬 1인칭 표시입니다. 외부 시점의 무기와 벽 겹침은 후속 검토 항목입니다.",
         "comparison": {
-          "before": "fpr-before-20261022.webp",
-          "after": "fpr-after-20261022.webp"
+          "before": "ppt-fpr-before-db780c60.png",
+          "after": "ppt-fpr-after-db780c60.png"
         },
         "links": [
           {
@@ -413,22 +417,34 @@
         ],
         "animations": [
           {
-            "file": "beam-before.gif",
-            "poster": "beam-before.webp",
+            "file": "ppt-beam-before-db780c60.gif",
+            "poster": "ppt-beam-before-poster-db780c60.png",
             "title": "보정 비활성화",
             "alt": "보정 비활성화 상태에서 총구 부근의 빔 연결이 끊겨 보이는 발사 장면",
             "caption": "총구 부근에서 빔 연결이 끊겨 보이는 장면",
-            "width": 640,
-            "height": 360
+            "width": 720,
+            "height": 406,
+            "crop": {
+              "left": 0,
+              "top": 0.17,
+              "right": 0,
+              "bottom": 0.08
+            }
           },
           {
-            "file": "beam-after.gif",
-            "poster": "beam-after.webp",
+            "file": "ppt-beam-after-db780c60.gif",
+            "poster": "ppt-beam-after-poster-db780c60.png",
             "title": "보정 활성화",
             "alt": "보정 활성화 상태에서 총구부터 벽까지 빔이 이어지는 발사 장면",
             "caption": "총구에서 벽까지 빔이 이어지는 장면",
-            "width": 640,
-            "height": 360
+            "width": 720,
+            "height": 406,
+            "crop": {
+              "left": 0,
+              "top": 0.17,
+              "right": 0,
+              "bottom": 0.08
+            }
           }
         ],
         "links": [
@@ -450,14 +466,14 @@
         "text": "원본과 별도의 깊이 전용 프록시 메시에 CustomDepth와 Custom Stencil 값을 기록하고 Post Process 머티리얼로 외곽선을 표시합니다.",
         "images": [
           {
-            "file": "outline-a-20261022.webp",
+            "file": "ppt-outline-a-db780c60.png",
             "alt": "플레이어 A의 시점에서 본 캐릭터 외곽선",
             "caption": "플레이어 A의 시점",
             "width": 638,
             "height": 225
           },
           {
-            "file": "outline-b-20261022.webp",
+            "file": "ppt-outline-b-db780c60.png",
             "alt": "플레이어 B의 시점에서 본 캐릭터 외곽선",
             "caption": "플레이어 B의 시점",
             "width": 636,
@@ -492,14 +508,14 @@
         "text": "사망 시 무기와 유효한 버프를 수집하고 물리 이동용 액터와 아이템을 생성합니다. 서버가 접촉 지점과 높이를 보정해 착지 위치를 결정하고 클라이언트에 최종 위치를 전달합니다. 버프는 기존 서버 종료 시각을 유지합니다.",
         "images": [
           {
-            "file": "drop-a-20261022.webp",
+            "file": "ppt-drop-a-db780c60.png",
             "alt": "플레이어 A 시점의 드롭 아이템",
             "caption": "플레이어 A",
             "width": 550,
             "height": 195
           },
           {
-            "file": "drop-b-20261022.webp",
+            "file": "ppt-drop-b-db780c60.png",
             "alt": "플레이어 B 시점의 드롭 아이템",
             "caption": "플레이어 B",
             "width": 550,
@@ -529,13 +545,6 @@
       {
         "title": "사망 카메라 전환과 지형 충돌 보정",
         "text": "사망한 플레이어의 소유자에게만 카메라를 전환하고, 사망 위치에서 공격자 반대편을 보도록 배치합니다. 지형 충돌 시 벽면을 따라 위치를 보정하고 사망 기준점을 넘어가지 않게 제한합니다. 새 캐릭터가 준비되면 플레이 시점으로 복귀합니다.",
-        "video": {
-          "file": "death-camera.mp4",
-          "poster": "death-camera-poster.webp",
-          "caption": "사망 전후의 시점 전환과 벽 뒤 공격자 표시",
-          "width": 864,
-          "height": 342
-        },
         "links": [
           {
             "label": "사망 카메라 코드",
@@ -549,6 +558,26 @@
         "highlights": [
           "소유자에게만",
           "벽면을 따라 위치를 보정"
+        ],
+        "animations": [
+          {
+            "file": "ppt-death-camera-db780c60.gif",
+            "poster": "ppt-death-camera-poster-db780c60.png",
+            "width": 864,
+            "height": 342,
+            "title": "사망 카메라 전환",
+            "caption": "사망 전후의 시점 전환과 벽 뒤 공격자 표시",
+            "alt": "사망 전후의 시점 전환과 벽 뒤 공격자 표시"
+          }
+        ],
+        "images": [
+          {
+            "file": "ppt-death-camera-editor-db780c60.png",
+            "width": 1163,
+            "height": 460,
+            "alt": "사망 카메라 위치와 지형 충돌 확인 화면",
+            "caption": "PPT의 사망 카메라 배치 확인 화면"
+          }
         ]
       },
       {
@@ -615,7 +644,10 @@
       ]
     },
     "sourceManifest": "content/sources/battlearena.json",
-    "architecture": "컴포넌트와 서브시스템에 핵심 처리를 분리하고 Blueprint 연출과 연결했습니다."
+    "architecture": "컴포넌트와 서브시스템에 핵심 처리를 분리하고 Blueprint 연출과 연결했습니다.",
+    "coverWidth": 703,
+    "coverHeight": 1153,
+    "mediaManifest": "content/sources/battlearena-media.json"
   },
   {
     "slug": "dungeonsweeper",
@@ -642,7 +674,7 @@
     "sourceManifest": "content/sources/dungeonsweeper.json",
     "featured": false,
     "published": true,
-    "cover": "cover.webp",
+    "cover": "ppt-cover-44532b95.png",
     "architecture": "제작 에셋을 입장 시 독립 탐험 기록으로 복사하고, DungeonRunController가 현재 층을 구성·복원합니다. 게임 상태는 DungeonHud·SpriteDepthView에 전달하며, GameSession·GameSaveService가 가방·플레이어·층 상태의 저장과 복원을 조정합니다.",
     "architectureLinks": [
       {
@@ -701,14 +733,14 @@
         "compact": true,
         "images": [
           {
-            "file": "loot-before.webp",
+            "file": "ppt-loot-before-44532b95.png",
             "width": 570,
             "height": 427,
             "alt": "회전 전 전리품 카드",
             "caption": "회전 전 전리품 카드"
           },
           {
-            "file": "loot-placed.webp",
+            "file": "ppt-loot-placed-44532b95.png",
             "width": 465,
             "height": 412,
             "alt": "회전 후 가방 (0, 0)에 배치",
@@ -735,14 +767,14 @@
             ],
             "images": [
               {
-                "file": "return-bag.webp",
+                "file": "ppt-return-bag-44532b95.png",
                 "width": 267,
                 "height": 292,
                 "alt": "탈출 전 가방 · 회수품 2개",
                 "caption": "탈출 전 가방 · 회수품 2개"
               },
               {
-                "file": "return-warehouse.webp",
+                "file": "ppt-return-warehouse-44532b95.png",
                 "width": 975,
                 "height": 540,
                 "alt": "탈출 후 창고 · 같은 회수품 2개",
@@ -774,14 +806,14 @@
             ],
             "images": [
               {
-                "file": "upgrade-before.webp",
+                "file": "ppt-upgrade-before-44532b95.png",
                 "width": 855,
                 "height": 428,
                 "alt": "확장 전 · 1000G / 가방 5×4",
                 "caption": "확장 전 · 1000G / 가방 5×4"
               },
               {
-                "file": "upgrade-after.webp",
+                "file": "ppt-upgrade-after-44532b95.png",
                 "width": 855,
                 "height": 428,
                 "alt": "확장 후 · 700G / 가방 6×4",
@@ -831,7 +863,7 @@
         "animations": [
           {
             "file": "awareness.gif",
-            "poster": "awareness-poster.webp",
+            "poster": "ppt-awareness-poster-44532b95.png",
             "width": 960,
             "height": 496,
             "title": "발견·추적·마지막 목격 위치 수색",
@@ -860,7 +892,7 @@
             "animations": [
               {
                 "file": "navigation.gif",
-                "poster": "navigation-poster.webp",
+                "poster": "ppt-navigation-poster-44532b95.png",
                 "width": 960,
                 "height": 496,
                 "title": "벽 우회와 직접 이동",
@@ -895,14 +927,14 @@
             ],
             "images": [
               {
-                "file": "hiding.webp",
+                "file": "ppt-hiding-44532b95.png",
                 "width": 630,
                 "height": 510,
                 "alt": "은신 중 · 같은 은신처에서 표시·물리 중지",
                 "caption": "은신 중 · 같은 은신처에서 표시·물리 중지"
               },
               {
-                "file": "hiding-exit.webp",
+                "file": "ppt-hiding-exit-44532b95.png",
                 "width": 630,
                 "height": 510,
                 "alt": "은신 해제 · 진입 좌표로 표시·물리 복원",
@@ -951,14 +983,14 @@
         "compact": true,
         "images": [
           {
-            "file": "builder.webp",
+            "file": "ppt-builder-44532b95.png",
             "width": 590,
             "height": 630,
             "alt": "Dungeon Builder의 실제 도면",
             "caption": "Dungeon Builder의 실제 도면"
           },
           {
-            "file": "builder-play.webp",
+            "file": "ppt-builder-play-44532b95.png",
             "width": 1020,
             "height": 765,
             "alt": "해당 던전의 실제 실행 결과",
@@ -986,7 +1018,7 @@
             "animations": [
               {
                 "file": "generation.gif",
-                "poster": "generation-poster.webp",
+                "poster": "ppt-generation-poster-44532b95.png",
                 "width": 845,
                 "height": 640,
                 "title": "시드 1150 → 1151 → 1150",
@@ -1018,7 +1050,7 @@
             ],
             "images": [
               {
-                "file": "reward-table.webp",
+                "file": "ppt-reward-table-44532b95.png",
                 "width": 840,
                 "height": 505,
                 "alt": "원본과 분리한 보상표 · 슬라임 핵 확률 10%",
@@ -1046,14 +1078,14 @@
             ],
             "images": [
               {
-                "file": "delete-plan.webp",
+                "file": "ppt-delete-plan-44532b95.png",
                 "width": 730,
                 "height": 165,
                 "alt": "격리 검증 · 전용 층 1개 / 공유 층 1개",
                 "caption": "격리 검증 · 전용 층 1개 / 공유 층 1개"
               },
               {
-                "file": "delete-result.webp",
+                "file": "ppt-delete-result-44532b95.png",
                 "width": 800,
                 "height": 315,
                 "alt": "삭제 결과 · 전용 층 제거 / 공유 층 보존",
@@ -1105,7 +1137,7 @@
         "animations": [
           {
             "file": "floors.gif",
-            "poster": "floors-poster.webp",
+            "poster": "ppt-floors-poster-44532b95.png",
             "width": 960,
             "height": 540,
             "title": "계단 왕복과 층별 상태 보존",
@@ -1134,7 +1166,7 @@
             "animations": [
               {
                 "file": "snapshot.gif",
-                "poster": "snapshot-poster.webp",
+                "poster": "ppt-snapshot-poster-44532b95.png",
                 "width": 960,
                 "height": 640,
                 "title": "저장 → 상태 변경 → 이전 상태 복원",
@@ -1217,14 +1249,14 @@
             ],
             "images": [
               {
-                "file": "save-rejected.webp",
+                "file": "ppt-save-rejected-44532b95.png",
                 "width": 880,
                 "height": 183,
                 "alt": "본 파일과 백업이 손상된 상태 · 로드 거부",
                 "caption": "본 파일과 백업이 손상된 상태 · 로드 거부"
               },
               {
-                "file": "backup-restored.webp",
+                "file": "ppt-backup-restored-44532b95.png",
                 "width": 1075,
                 "height": 248,
                 "alt": "정상 백업 교체 후 · 145G 복원",
@@ -1276,7 +1308,7 @@
         "animations": [
           {
             "file": "movement.gif",
-            "poster": "movement-poster.webp",
+            "poster": "ppt-movement-poster-44532b95.png",
             "width": 960,
             "height": 546,
             "title": "이동 중 대시와 카메라 추종",
@@ -1304,14 +1336,14 @@
             ],
             "images": [
               {
-                "file": "logical-xy.webp",
+                "file": "ppt-logical-xy-44532b95.png",
                 "width": 780,
                 "height": 610,
                 "alt": "XY 논리 좌표의 2D 충돌체",
                 "caption": "XY 논리 좌표의 2D 충돌체"
               },
               {
-                "file": "display-xz.webp",
+                "file": "ppt-display-xz-44532b95.png",
                 "width": 705,
                 "height": 540,
                 "alt": "XZ 공간에 배치한 표시 사본",
@@ -1343,14 +1375,14 @@
             ],
             "images": [
               {
-                "file": "vision-small.webp",
+                "file": "ppt-vision-small-44532b95.png",
                 "width": 1080,
                 "height": 810,
                 "alt": "같은 위치 · 선명 반경 1 / 어둠 반경 2",
                 "caption": "같은 위치 · 선명 반경 1 / 어둠 반경 2"
               },
               {
-                "file": "vision-wide.webp",
+                "file": "ppt-vision-wide-44532b95.png",
                 "width": 1080,
                 "height": 810,
                 "alt": "같은 위치 · 선명 반경 4 / 어둠 반경 6",
@@ -1389,7 +1421,7 @@
         "animations": [
           {
             "file": "dismantling.gif",
-            "poster": "dismantling-poster.webp",
+            "poster": "ppt-dismantling-poster-44532b95.png",
             "width": 960,
             "height": 590,
             "title": "진행 중 해체 세션 저장·복원",
@@ -1501,7 +1533,7 @@
         "animations": [
           {
             "file": "minimap.gif",
-            "poster": "minimap-poster.webp",
+            "poster": "ppt-minimap-poster-44532b95.png",
             "width": 368,
             "height": 455,
             "title": "실제 이동에 따른 미니맵 갱신",
@@ -1559,7 +1591,7 @@
         },
         "images": [
           {
-            "file": "geometry.webp",
+            "file": "ppt-geometry-44532b95.png",
             "width": 1010,
             "height": 570,
             "alt": "실제 Scene 뷰 · 표시 메시와 논리 충돌체 분리",
@@ -1662,6 +1694,9 @@
       "독립 테스트 케이스 수가 아닙니다",
       "가방 배치와 해체·귀환·거래",
       "던전 제작 도구와 저장·복원"
-    ]
+    ],
+    "coverWidth": 1920,
+    "coverHeight": 1080,
+    "mediaManifest": "content/sources/dungeonsweeper-media.json"
   }
 ]

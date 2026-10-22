@@ -79,6 +79,18 @@ for (const project of projects.filter(p => p.published)) {
     }
   }
   assert(home.includes(`id="project-${project.slug}"`), `Project missing from homepage: ${project.slug}`);
+  if (project.mediaManifest) {
+    const media = JSON.parse(await readFile(path.join(root, project.mediaManifest), 'utf8'));
+    const source = JSON.parse(await readFile(path.join(root, project.sourceManifest), 'utf8'));
+    assert.equal(media.presentationSha256, source.sha256, `Media references a different PPT: ${project.slug}`);
+    const detail = await htmlAt(path.join(root, 'projects', project.slug, 'index.html'));
+    for (const item of media.images) {
+      const url = `/assets/${project.slug}/${item.output}`;
+      const bytes = await readFile(path.join(root, url));
+      assert.equal(createHash('sha256').update(bytes).digest('hex'), item.outputSha256, `PPT image changed: ${url}`);
+      assert(home.includes(url) && detail.includes(url), `PPT image missing from a public page: ${url}`);
+    }
+  }
   for (const section of [...project.cases, ...project.extras]) {
     assert(home.includes(`id="${project.slug}-${section.id}"`), `Implementation missing from homepage: ${section.id}`);
   }
