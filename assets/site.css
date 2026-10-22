@@ -443,7 +443,8 @@ details[open]>summary .when-closed,details:not([open])>summary .when-open{displa
 .profile-skill-title{display:flex;gap:11px;align-items:center}
 .profile-skill-title>.icon{color:var(--accent);width:24px;height:24px}
 .profile-skill-title h2{font-size:18px;letter-spacing:-.025em;line-height:1.6}
-.profile-skill>p{font-size:13px;line-height:1.95;color:var(--muted);margin-top:17px}
+.profile-skill>p{font-size:13px;line-height:26px;color:var(--muted);margin-top:17px;align-self:first baseline}
+.profile-skill>p .text-accent{font-size:inherit;line-height:inherit;vertical-align:baseline}
 .skill-case-link{display:inline-flex;align-items:center;gap:12px;font-size:11px;font-weight:600;margin-top:16px}
 .skill-case-link:hover{color:var(--accent)}
 .profile-skill>.skill-case-link{align-self:start;margin-top:auto;padding-top:16px}
