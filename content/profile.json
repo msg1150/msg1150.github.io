@@ -11,20 +11,20 @@
     {
       "title": "게임플레이",
       "tech": "C++ · Unreal Engine 5 · Blueprint",
-      "description": "조준·투사체 충돌과 로컬 빔 표시, 공간 포탈의 시점 변환과 통과 처리까지. 핵심 로직을 컴포넌트와 서브시스템으로 분리하고 Blueprint 연출에 연결합니다.",
+      "description": "조준·투사체 충돌과 로컬 빔 표시, 공간 포탈의 투영·클리핑·통과 처리를 구현합니다. 핵심 로직을 컴포넌트와 서브시스템으로 분리하고 Blueprint 연출에 연결합니다.",
       "anchor": "combat"
     },
     {
-      "title": "AI 이동 경로",
+      "title": "전투 NPC 경로 탐색",
       "tech": "NavMesh · Dijkstra · PathLink",
-      "description": "걷기와 포탈·점프패드 이동을 하나의 경로로 비교합니다. 정적 연결 정보를 재사용하고 선택한 구간의 상세 경로를 생성합니다.",
+      "description": "전투 NPC의 특수 이동 경로 탐색을 담당했습니다. 비용 0인 포탈과 일반 이동을 Dijkstra로 비교하고, Context별 정적 그래프를 재사용합니다.",
       "anchor": "navigation"
     },
     {
       "title": "제작 도구",
       "tech": ".NET 8 WPF · Reflection · Slate",
       "description": "외부 데이터 편집과 JSON 동기화, 잘못된 입력의 저장 차단, 레벨 배치 오류 검사로 반복 작업을 돕습니다.",
-      "anchor": "data-tools"
+      "anchor": "level-validator"
     }
   ],
   "portrait": null

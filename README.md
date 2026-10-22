@@ -40,7 +40,7 @@ node scripts/serve.mjs
 6. `featured: true`인 첫 프로젝트는 소개 영역의 구현 사례 링크 기준입니다. 첫 화면에는 특정 게임을 노출하지 않습니다. 대표작을 바꾸면 기술 링크의 연결 대상도 함께 점검하세요.
 7. 빌드·점검 후 화면에서 확인합니다. 공개 프로젝트를 숨기거나 삭제할 경우 예전에 생성된 `projects/slug/` 폴더도 직접 제거합니다.
 
-핵심 사례 개수는 조절할 수 있습니다. `sections`에 하위 구현 설명·흐름·이미지를, `animations`에 `file`·`poster`·`title`·`alt`·`caption`을 넣으면 사용자 조작으로 재생하는 GIF를 연결할 수 있습니다. 코드 링크별 `revision`으로 서로 다른 근거 커밋을 지정할 수 있습니다. `technicalDocument`에는 실제 기술 문서 URL을 넣습니다. `comparison: true` 옵션은 `fpr-before.webp`와 `fpr-after.webp`를 사용하므로 일반 프로젝트에서는 생략하세요.
+핵심 사례 개수는 조절할 수 있습니다. `sections`에 하위 구현 설명·흐름·이미지를, `animations`에 `file`·`poster`·`title`·`alt`·`caption`을 넣으면 사용자 조작으로 재생하는 GIF를 연결할 수 있습니다. 코드 링크별 `revision`으로 서로 다른 근거 커밋을 지정할 수 있습니다. `technicalDocument`에는 실제 기술 문서 URL을 넣습니다. `comparison: true`는 기본 FPR 비교 이미지를 사용하며, `comparison: {"before": "파일명", "after": "파일명"}`으로 프로젝트별 비교 이미지를 지정할 수 있습니다. 일반 프로젝트에서는 이 옵션을 생략하세요.
 
 ## GitHub Pages
 
