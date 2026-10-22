@@ -1,7 +1,7 @@
 {
   "name": "박장한",
-  "role": "게임플레이 프로그래머",
-  "roleEnglish": "Gameplay Programmer",
+  "role": "게임 프로그래머",
+  "roleEnglish": "Game Programmer",
   "email": "wkdgks88009@gmail.com",
   "github": "https://github.com/msg1150",
   "siteUrl": "https://msg1150.github.io",
@@ -44,5 +44,5 @@
     "데이터 편집·검증 도구",
     "문제의 원인을 나누고"
   ],
-  "shareImage": "/assets/portfolio-preview-20261023.png"
+  "shareImage": "/assets/portfolio-preview-game-programmer-20261023.png"
 }
