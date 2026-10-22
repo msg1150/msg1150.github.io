@@ -33,5 +33,16 @@
       "github"
     ],
     "license": "MIT"
+  },
+  "epicEditor": {
+    "owner": "Epic Games, Inc.",
+    "engineVersion": "5.8.3",
+    "sourceFile": "C:/Program Files/Epic Games/UE_5.8/Engine/Content/Editor/Slate/Starship/AssetIcons/Blueprint_64.svg",
+    "asset": "Starship/AssetIcons/Blueprint_64.svg",
+    "styleName": "ClassThumbnail.Blueprint",
+    "sha256": "97db4b44aea59c193221e8efa2bc6a69ee0804e7933f001f5c0ce923722b69eb",
+    "copyright": "Copyright Epic Games, Inc. All Rights Reserved.",
+    "license": "Unreal Engine EULA (Epic proprietary editor asset; not Devicon/MIT)",
+    "licenseUrl": "https://www.unrealengine.com/eula/unreal"
   }
 }

@@ -1,5 +1,11 @@
 # 수정 포트폴리오 반영 확인 기록
 
+## Blueprint 실제 에디터 아이콘 적용
+
+- UE 5.8.3 설치 폴더의 `Starship/AssetIcons/Blueprint_64.svg`를 그대로 복사했다. `StarshipStyle.cpp`에서 Blueprint 형식과 ClassThumbnail 등록 경로를 확인했다.
+- 메인 기술 목록·BattleArena 기술 목록·기술 프로필의 Blueprint 텍스트 칩을 해당 원본 아이콘으로 교체했다. 이름·툴팁·모바일/인쇄 이름 표시는 유지한다.
+- SVG 도형은 수정하지 않았다. 밝은 원본 도형의 가독성을 위해 아이콘 칸 배경만 변경한다. 원본 해시 일치·XML 구조·정적 링크 점검으로 확인하며 실제 브라우저 화면은 사용 제한으로 재검증하지 못했다.
+
 ## Dungeon Sweeper 추가와 원본 아이콘 교체
 
 - 사용자가 지정한 Dungeon Sweeper PPT 26장만으로 핵심 구현 5개·추가 구현 1개·검증·실행 안내를 작성했다. 작성 중 상태를 명시하고 이미 있는 설명·링크만 제공한다.
