@@ -73,8 +73,9 @@ document.querySelectorAll('[data-comparison]').forEach(container => {
     });
   });
 });
-const tocLinks = [...document.querySelectorAll('.project-toc nav a')];
-if (tocLinks.length && 'IntersectionObserver' in window) {
+document.querySelectorAll('.project-layout').forEach(layout => {
+  const tocLinks = [...layout.querySelectorAll('.project-toc nav a')];
+  if (!tocLinks.length || !('IntersectionObserver' in window)) return;
   const observer = new IntersectionObserver(entries => {
     for (const entry of entries) {
       if (!entry.isIntersecting) continue;
@@ -86,8 +87,33 @@ if (tocLinks.length && 'IntersectionObserver' in window) {
       });
     }
   }, { rootMargin: '-15% 0px -65% 0px', threshold: 0 });
-  document.querySelectorAll('.project-content > section').forEach(section => observer.observe(section));
+  layout.querySelectorAll('.project-content > section, .project-content > details').forEach(section => observer.observe(section));
+});
+
+function revealHashTarget() {
+  if (!location.hash) return;
+  let id;
+  try { id = decodeURIComponent(location.hash.slice(1)); } catch { return; }
+  const target = document.getElementById(id);
+  if (!target) return;
+  const closed = [];
+  let node = target;
+  while (node) {
+    if (node.tagName === 'DETAILS' && !node.open) closed.push(node);
+    node = node.parentElement;
+  }
+  if (!closed.length) return;
+  closed.reverse().forEach(details => { details.open = true; });
+  requestAnimationFrame(() => target.scrollIntoView({ block: 'start' }));
 }
+window.addEventListener('hashchange', revealHashTarget);
+document.addEventListener('click', event => {
+  const link = event.target.closest('a[href]');
+  if (!link || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+  const url = new URL(link.href, location.href);
+  if (url.origin === location.origin && url.pathname === location.pathname && url.hash && url.hash === location.hash) revealHashTarget();
+});
+revealHashTarget();
 document.querySelectorAll('details').forEach(details => {
   details.addEventListener('toggle', () => {
     if (!details.open) {

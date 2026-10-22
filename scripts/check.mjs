@@ -47,4 +47,15 @@ for (const page of pages) {
   for (const img of html.matchAll(/<img\b[^>]*>/g)) assert(/\balt="[^"]*"/.test(img[0]),`Image alt missing: ${page}`);
   for (const link of html.matchAll(/<a\b[^>]*target="_blank"[^>]*>/g)) assert(/rel="[^"]*noopener/.test(link[0]),`External link rel missing: ${page}`);
 }
+const home = await htmlAt(path.join(root, 'index.html'));
+for (const project of projects.filter(p => p.published)) {
+  assert(home.includes(`id="project-${project.slug}"`), `Project missing from homepage: ${project.slug}`);
+  for (const section of [...project.cases, ...project.extras]) {
+    assert(home.includes(`id="${project.slug}-${section.id}"`), `Implementation missing from homepage: ${section.id}`);
+  }
+}
+const homeDetails = [...home.matchAll(/<details\b[^>]*>/g)];
+assert(homeDetails.length, 'Homepage needs expandable project content');
+for (const [tag] of homeDetails) assert(/\bopen(?:\s|>|=)/.test(tag), `Content must be open by default: ${tag}`);
+assert(!/href="\/projects\//.test(home), 'Homepage project navigation should stay on the homepage');
 console.log(`PASS: ${pages.length} pages, ${links} local resources and anchors, image alternatives, metadata and content IDs.`);
