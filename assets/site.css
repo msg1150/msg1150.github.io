@@ -321,6 +321,11 @@ details[open]>summary .when-closed,details:not([open])>summary .when-open{displa
 .disclosure-body>.implementation-row{margin-top:26px}
 .case-part>.implementation-row{margin-top:18px}
 .implementation-row:not(.has-media)>.implementation-copy{max-width:850px}
+.implementation-row.has-supporting-diagram{grid-template-rows:auto 1fr;row-gap:22px}
+.has-supporting-diagram>.implementation-copy{grid-column:1;grid-row:1}
+.has-supporting-diagram>.implementation-media{grid-column:2;grid-row:1 / span 2}
+.implementation-support{min-width:0;grid-column:1;grid-row:2;align-self:start}
+@media(max-width:800px){.implementation-row.has-supporting-diagram{grid-template-rows:auto}.has-supporting-diagram>.implementation-media{grid-column:1;grid-row:2}.implementation-support{grid-column:1;grid-row:3}}
 @media(max-width:1000px){.project-overview,.implementation-row.has-media{gap:30px;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.implementation-media .animation-gallery.paired{grid-template-columns:1fr}}
 @media(max-width:800px){.project-overview,.implementation-row.has-media{grid-template-columns:minmax(0,1fr);gap:26px}.project-overview-media{width:100%}.project-overview-media .project-banner{max-height:420px}.project-toc nav{gap:5px 18px}.implementation-media .animation-gallery.paired{grid-template-columns:repeat(2,minmax(0,1fr))}.implementation-copy .problem{margin-bottom:22px}}
 @media(max-width:600px){.project-overview{margin-top:20px}.project-overview-copy .project-lead{font-size:14px}.implementation-copy>p{font-size:13px}.implementation-media .animation-gallery.paired{grid-template-columns:minmax(0,1fr)}.implementation-media{gap:22px}.project-toc nav a{font-size:10px}.implementation-copy .source-context{font-size:10px}.disclosure-body>.implementation-row{margin-top:22px}}
