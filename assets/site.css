@@ -365,7 +365,8 @@ details[open]>summary .when-closed,details:not([open])>summary .when-open{displa
 .explain-diagram svg .wall{fill:#a3a99d}
 .explain-diagram svg .sweep-area,.explain-diagram svg .visible-zone{fill:#edf3e6;stroke:#c1d2b0;stroke-width:1.5}
 .explain-diagram svg .route-muted{stroke:#99a48e;stroke-width:3;fill:none}
-.explain-diagram svg .portal-link{stroke:#db4b2b;stroke-width:3;stroke-dasharray:8 5}
+.explain-diagram svg .route-divider{stroke:#e0e5d9;stroke-width:1}
+.explain-diagram svg .portal-link{stroke:#db4b2b;stroke-width:3;stroke-dasharray:8 5;fill:none}
 .explain-diagram svg .clip-zone{fill:#eeefeb;stroke:#d9ddd2;stroke-width:1.5}
 .explain-diagram svg .clip-plane{stroke:#db4b2b;stroke-width:4}
 .explain-diagram svg .camera-shape{fill:#555f4d}

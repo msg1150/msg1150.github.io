@@ -12,7 +12,7 @@ const diagrams = {
     + '<path d="M 254 76 L 268 78 L 261 90" class="arrow"/><path d="M 487 68 L 500 75 L 487 82" class="arrow secondary"/>'
     + dot(76,151,'accent-fill') + dot(276,75,'accent-fill')
     + text(50,180,'총구','strong') + text(276,50,'합류 지점','strong','middle')
-    + text(173,137,'① 합류까지 이동','','middle') + text(415,111,'② 조준 방향으로','','middle')
+    + text(205,166,'① 합류까지 이동','','middle') + text(415,111,'② 조준 방향으로','','middle')
     + text(280,207,'프레임 시간 = 합류까지의 시간 + 남은 시간','muted','middle'),230),
     '위치 관계를 설명하는 개념도 · 이동 중 충돌하면 중단'),
 
@@ -25,14 +25,21 @@ const diagrams = {
     + text(67,153,'이전 위치','muted','middle'),210),
     'RecordTravel로 기록한 각 이동 구간을 Sphere Sweep'),
 
-  navigation: () => frame('일반 경로와 비용 0의 포탈 경로 비교', svg('출발부터 도착까지 일반 이동은 NavMesh 경로 길이를 사용하고, 포탈 경로는 입구까지 이동과 비용 0의 포탈 통과, 출구부터 이동을 합산한다.',
-    '<path d="M 48 142 V 60 H 506 V 142" class="route-muted"/>'
-    + line(48,142,184,142,'path') + line(184,142,375,142,'portal-link') + line(375,142,506,142,'path')
-    + dot(48,142,'accent-fill') + dot(184,142,'accent-fill') + dot(375,142,'accent-fill') + dot(506,142,'accent-fill')
-    + text(280,38,'일반 이동: NavMesh 경로 길이','muted','middle')
-    + text(280,119,'포탈 통과 비용 = 0','accent-text','middle')
-    + text(48,177,'출발','strong','middle') + text(184,177,'입구','','middle') + text(375,177,'출구','','middle') + text(506,177,'도착','strong','middle'),200),
-    '개념도 · 직선거리 추정이 실제 비용보다 클 수 있어 Dijkstra 사용'),
+  navigation: () => frame('거리 모양 대신 누적 이동 비용으로 비교', svg('실제 지도가 아닌 비용 비교 예시. 일반 경로는 NavMesh 길이 120, 포탈 경로는 입구까지 20 더하기 포탈 연결 0 더하기 출구부터 30으로 총 50이다. 입구와 출구 사이의 점선은 도보 구간이 아닌 포탈 연결이다.',
+    text(24,26,'일반 경로','strong') + text(536,26,'총비용 120','strong','end')
+    + line(48,85,512,85,'route-muted') + dot(48,85,'muted-fill') + dot(512,85,'muted-fill')
+    + text(280,67,'NavMesh 경로 길이 120','muted','middle')
+    + text(48,114,'출발','','middle') + text(512,114,'도착','','middle')
+    + line(24,137,536,137,'route-divider')
+    + text(24,169,'포탈 경로','strong') + text(536,169,'20 + 0 + 30 = 50','accent-text','end')
+    + line(48,258,174,258,'path') + line(386,258,512,258,'path')
+    + '<path d="M 174 258 Q 280 176 386 258" class="portal-link"/>'
+    + dot(48,258,'accent-fill') + dot(174,258,'accent-fill') + dot(386,258,'accent-fill') + dot(512,258,'accent-fill')
+    + text(280,207,'포탈 연결 비용 0','accent-text','middle')
+    + text(104,242,'이동 20','muted','middle') + text(456,242,'이동 30','muted','middle')
+    + text(280,279,'도보 구간 아님','muted','middle')
+    + text(48,308,'출발','','middle') + text(174,308,'입구','','middle') + text(386,308,'출구','','middle') + text(512,308,'도착','','middle'),330),
+    '비용 설명용 예시 · 실제 맵 거리 아님. 포탈로 실제 비용이 직선거리 추정보다 작아질 수 있어 Dijkstra 사용'),
 
   clipping: () => frame('출구 면 이전은 잘라내고, 이후는 표시', svg('가상 카메라와 출구 사이의 중간 벽은 잘라내고 출구 면부터 장면을 표시한다. 카메라 거리는 원근감 계산에 유지한다.',
     box(24,51,275,112,'clip-zone') + box(299,51,237,112,'visible-zone')
