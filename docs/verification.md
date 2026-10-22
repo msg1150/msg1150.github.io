@@ -1,5 +1,10 @@
 # 수정 포트폴리오 반영 확인 기록
 
+## Blueprint 아이콘 배경 통일
+
+- Blueprint만 적용되던 어두운 배경·테두리 규칙을 제거해 다른 기술 아이콘과 같은 흰색 칸을 사용한다.
+- 원본 SVG 파일은 유지하고 CSS 밝기 필터로 밝은 회색 도형의 대비를 높인다. 빌드·정적 리소스 점검을 수행하며 브라우저 제한으로 실제 화면 재검증은 수행하지 못했다.
+
 ## Blueprint 실제 에디터 아이콘 적용
 
 - UE 5.8.3 설치 폴더의 `Starship/AssetIcons/Blueprint_64.svg`를 그대로 복사했다. `StarshipStyle.cpp`에서 Blueprint 형식과 ClassThumbnail 등록 경로를 확인했다.
