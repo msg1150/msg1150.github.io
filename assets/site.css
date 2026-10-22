@@ -289,6 +289,7 @@ details[open]>summary .when-closed,details:not([open])>summary .when-open{displa
 .hero-focus li:before{content:'';width:4px;height:4px;border-radius:50%;background:var(--accent)}
 .portrait-slot{display:flex;align-items:center;justify-content:center;min-width:0}
 .portrait-space,.portrait-image{width:216px;aspect-ratio:3/4;border-radius:3px;border:1px solid var(--line);background:#eceee7;object-fit:cover}
+.portrait-space{background:var(--paper);border-color:transparent}
 @media(max-width:800px){.hero{grid-template-columns:minmax(0,1fr) 185px;gap:30px}.hero h1 .hero-name{font-size:53px}.hero h1 .hero-role{font-size:23px}.portrait-space,.portrait-image{width:172px}.hero-focus{font-size:11px;gap:7px 12px}}
 @media(max-width:600px){.hero{display:grid;grid-template-columns:minmax(0,1fr) 90px;gap:18px;align-items:start;padding-block:43px 38px}.hero-copy{display:contents}.hero-copy>.eyebrow,.hero-description,.hero-focus,.hero-actions,.hero-skills{grid-column:1/-1}.hero-copy>.eyebrow{margin-bottom:0;font-size:8px}.hero h1{grid-column:1;grid-row:2;white-space:normal;align-self:center}.hero h1 .hero-name{font-size:47px}.hero h1 .hero-role{font-size:20px;margin-top:12px;line-height:1.5}.portrait-slot{grid-column:2;grid-row:2}.portrait-space,.portrait-image{width:90px}.hero-description{margin-top:4px}.hero-focus{margin-top:0;font-size:11px}.hero-actions{margin-top:6px}.hero-skills{margin-top:8px}}
 .project-overview{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.12fr);gap:48px;align-items:start;margin-top:24px}
