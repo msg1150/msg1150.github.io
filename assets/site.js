@@ -143,3 +143,17 @@ document.querySelectorAll('[data-animation]').forEach(container => {
     button.textContent = '정지 화면 보기';
   });
 });
+
+document.querySelectorAll('[data-spawn-example]').forEach(container => {
+  const candidates = [...container.querySelectorAll('[data-spawn-candidate]')];
+  const retained = candidates.filter(candidate => candidate.classList.contains('is-retained'));
+  container.querySelector('[data-spawn-draw]').addEventListener('click', () => {
+    const selected = retained[Math.floor(Math.random() * retained.length)];
+    for (const candidate of candidates) {
+      const active = candidate === selected;
+      candidate.classList.toggle('is-selected', active);
+      candidate.querySelector('[data-spawn-state]').textContent = active ? '선택 예시' : candidate.classList.contains('is-retained') ? '유지' : '제외';
+    }
+    container.querySelector('[data-spawn-result]').textContent = `선택 예시: 후보 ${selected.dataset.spawnCandidate}`;
+  });
+});

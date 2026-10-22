@@ -2,6 +2,7 @@ import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
+import { renderDiagrams } from './diagrams.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const cssVersion = createHash('sha256').update(await readFile(path.join(root, 'assets/site.css'))).digest('hex').slice(0, 10);
@@ -20,8 +21,9 @@ const video = (p, v) => `<figure class="video-figure"><video controls playsinlin
 const flow = steps => steps?.length ? `<ol class="data-flow" aria-label="처리 흐름">${steps.map(step => `<li>${e(step)}</li>`).join('')}</ol>` : '';
 const animations = (p, items = []) => items.length ? `<div class="animation-gallery${items.length > 1 ? ' paired' : ''}">${items.map(a => `<figure class="animation-card" data-animation role="group" aria-label="${e(a.title)}"><h4>${e(a.title)}</h4><img src="${asset(p, a.poster)}" alt="${e(a.alt)}"${a.width && a.height ? ` width="${a.width}" height="${a.height}"` : ""} loading="lazy" data-animation-image data-still="${asset(p, a.poster)}" data-motion="${asset(p, a.file)}"><div class="animation-controls"><button type="button" data-animation-toggle aria-pressed="false">애니메이션 재생</button><a href="${asset(p, a.file)}" download>GIF 다운로드 ↓</a></div><figcaption>${e(a.caption)}</figcaption></figure>`).join('')}</div>` : '';
 const splitContent = (copy, media) => `<div class="implementation-row${media ? ' has-media' : ''}"><div class="implementation-copy">${copy}</div>${media ? `<div class="implementation-media">${media}</div>` : ''}</div>`;
-const mediaContent = (p, item) => `${item.comparison ? comparison(p, item.comparison) : ''}${item.video ? video(p, item.video) : ''}${animations(p, item.animations)}${(item.images || []).map(im => figure(p, im)).join('')}`;
-const caseParts = (p, parts = []) => parts.map(part => `<div class="case-part"${part.id ? ` id="${e(part.id)}"` : ""}><h3>${e(part.title)}</h3>${splitContent(part.paragraphs.map(t => `<p>${e(t)}</p>`).join('') + flow(part.flow), mediaContent(p, part))}</div>`).join('');
+const mediaContent = (p, item) => `${renderDiagrams(item.diagrams)}${item.comparison ? comparison(p, item.comparison) : ''}${item.video ? video(p, item.video) : ''}${animations(p, item.animations)}${(item.images || []).map(im => figure(p, im)).join('')}`;
+const scanTable = table => table ? `<div class="scan-table"><table><caption>${e(table.caption)}</caption><thead><tr>${table.headers.map(h=>`<th scope="col">${e(h)}</th>`).join('')}</tr></thead><tbody>${table.rows.map(row=>`<tr>${row.map((cell,i)=>i===0?`<th scope="row">${e(cell)}</th>`:`<td>${e(cell)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>` : '';
+const caseParts = (p, parts = []) => parts.map(part => `<div class="case-part"${part.id ? ` id="${e(part.id)}"` : ""}><h3>${e(part.title)}</h3>${splitContent(part.paragraphs.map(t => `<p>${e(t)}</p>`).join('') + scanTable(part.table) + flow(part.flow), mediaContent(p, part))}</div>`).join('');
 const heading = (no, title, label) => `<div class="section-heading"><div><span class="eyebrow">${e(label)}</span><h2>${e(title)}</h2></div><span class="section-no" aria-hidden="true">${no}</span></div>`;
 
 function header(current) {
@@ -56,7 +58,7 @@ function renderProject(p, inline = false, index = 0) {
   const toc = p.cases.map((c, i) => `<a href="#${e(c.id)}"><span>${String(i+1).padStart(2,'0')}</span>${e(c.navTitle || c.title)}</a>`).join('');
   const cases = p.cases.map((c, i) => {
     const copy = (c.sourceContext ? `<p class="source-context">${e(c.sourceContext)}</p>` : '')
-      + `<div class="problem"><span class="mini-label">해결할 문제</span><p>${e(c.question)}</p></div><div class="case-text"><h3>구현 방식</h3>${c.implementation.map(t => `<p>${e(t)}</p>`).join('')}</div>${flow(c.flow)}<div class="result"><span class="mini-label">적용 결과</span><p>${e(c.result)}</p></div>${codeLinks(p, c.links)}`;
+      + `<div class="problem"><span class="mini-label">해결할 문제</span><p>${e(c.question)}</p></div><div class="case-text"><h3>구현 방식</h3>${c.implementation.map(t => `<p>${e(t)}</p>`).join('')}</div>${flow(c.flow)}${c.compact ? "" : `<div class="result"><span class="mini-label">적용 결과</span><p>${e(c.result)}</p></div>`}${codeLinks(p, c.links)}`;
     return `<details open id="${e(c.id)}" class="case-section disclosure"><summary><span class="disclosure-heading"><span class="eyebrow">${String(i+1).padStart(2,'0')} / ${e(c.label)}</span><h3>${e(c.title)}</h3></span><span class="disclosure-action"><span class="when-open">접기 −</span><span class="when-closed">펼치기 ＋</span></span></summary><div class="disclosure-body">${splitContent(copy, mediaContent(p, c))}${caseParts(p, c.sections)}</div></details>`;
   }).join('');
   const extras = p.extras.map(x => {
