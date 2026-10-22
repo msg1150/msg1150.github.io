@@ -49,6 +49,11 @@ for (const page of pages) {
   for (const link of html.matchAll(/<a\b[^>]*target="_blank"[^>]*>/g)) assert(/rel="[^"]*noopener/.test(link[0]),`External link rel missing: ${page}`);
 }
 const home = await htmlAt(path.join(root, 'index.html'));
+for (const project of projects.filter(p => p.published)) {
+  const repoLabel = new URL(project.repository).host + new URL(project.repository).pathname;
+  const resume = await htmlAt(path.join(root, 'resume/index.html'));
+  assert(resume.includes(`>${repoLabel} `), `Repository link label differs: ${project.slug}`);
+}
 assert(home.includes('id="profile"'), 'Profile must be included on homepage');
 assert(!/href="\/resume\//.test(home), 'Homepage profile navigation should stay on homepage');
 assert(home.includes('<section id="profile" class="wrap unified-profile">'), 'Top section must be the unified profile');
@@ -65,12 +70,19 @@ for (const project of projects.filter(p => p.published)) {
   if (project.sourceManifest) {
     const source = JSON.parse(await readFile(path.join(root, project.sourceManifest), 'utf8'));
     const ppt = await readFile(path.join(root, project.presentation.split('?')[0]));
-    assert.equal(ppt.length, source.bytes, `PPT download size differs from source: ${project.slug}`);
-    assert.equal(createHash('sha256').update(ppt).digest('hex'), source.sha256, `PPT download differs from source: ${project.slug}`);
+    const download = source.download || source;
+    assert.equal(ppt.length, download.bytes, `PPT download size differs from manifest: ${project.slug}`);
+    assert.equal(createHash('sha256').update(ppt).digest('hex'), download.sha256, `PPT download differs from manifest: ${project.slug}`);
     const covered = [...Object.values(project.sourceSlides).flat(), ...project.cases.flatMap(c=>c.sourceSlides), ...project.extras.flatMap(c=>c.sourceSlides)].sort((a,b)=>a-b);
     assert.deepEqual(covered, Array.from({length:source.slideCount},(_,i)=>i+1), `PPT slide coverage differs: ${project.slug}`);
     const detail = await htmlAt(path.join(root, 'projects', project.slug, 'index.html'));
-    const sourceLinks = new Set(source.slides.flatMap(s=>s.links));
+    const sourceLinks = new Set(source.slides.flatMap(s=>s.links).map(url => download.codeRevision
+      ? url.replace(new RegExp(`(${project.repository}/(?:blob|tree|commits)/)main(?=/|$)`), `$1${download.codeRevision}`)
+      : url));
+    if (download.codeRevision) {
+      assert.match(project.codeRevision, /^[a-f0-9]{40}$/, 'Submitted code must use an immutable commit SHA');
+      assert.equal(project.codeRevision, download.codeRevision, 'Website and PPT must use the same code revision');
+    }
     const repositoryCode = `${project.repository}/`;
     for (const [name, html] of [['home', home], ['detail', detail]]) {
       const publicLinks = new Set([...html.matchAll(/href="([^"]+)"/g)].map(m=>m[1].replaceAll('&amp;','&')));

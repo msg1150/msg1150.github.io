@@ -9,6 +9,7 @@ Node.js 20 이상:
 ```powershell
 node scripts/build.mjs
 node scripts/check.mjs
+python scripts/check-pptx.py
 node scripts/serve.mjs
 ```
 
@@ -40,7 +41,7 @@ node scripts/serve.mjs
 
 프로필·프로젝트·핵심/추가 구현·하위 설명의 `highlights` 배열에 원문 구절을 넣으면 진한 주황색 굵은 글씨로 강조합니다. `scripts/prose.mjs`가 텍스트를 이스케이프해 출력하며 HTML을 직접 넣지 않습니다. `evidenceTable`의 마지막 열은 적용 후 결과로 강조하고 인쇄에서는 검은색을 사용합니다.
 
-사진 여러 장은 `media-gallery` 두 열로 묶고 최대 높이를 제한합니다. 사진은 PPT에서 보이는 자르기를 반영한 무손실 PNG이며 화면에서 추가로 자르지 않습니다. GIF는 원본을 유지하고 `animations[].crop`의 0–1 비율로 PPT의 표시 범위를 맞춥니다. `mediaManifest`의 원본 PPT 식별값·출력 해시는 정적 점검에 포함됩니다. 하단 연락 영역은 이메일·GitHub·복사 아이콘만 표시합니다.
+사진 여러 장은 `media-gallery` 두 열로 묶고 최대 높이를 제한합니다. 사진은 PPT에서 보이는 자르기를 반영한 무손실 PNG이며 화면에서 추가로 자르지 않습니다. `animations[].videoFile`이 있으면 브라우저 기본 컨트롤로 MP4를 바로 재생합니다. 원본 GIF도 유지하고 `animations[].crop`의 0–1 비율로 PPT의 표시 범위를 맞춥니다. `mediaManifest`의 원본 PPT 식별값·출력 해시는 정적 점검에 포함됩니다. 하단 연락 영역은 이메일·GitHub·복사 아이콘만 표시합니다.
 
 `scripts/diagrams.mjs`는 구현을 설명하는 SVG·HTML 도식을 제공합니다. JSON의 `diagrams`에 등록된 이름을 연결하면 오른쪽 미디어 열에 표시합니다. 개념도는 실제 플레이 화면과 구분하며, 원본 미디어도 함께 유지합니다. 스폰의 추첨 버튼은 고정된 후보 6곳 중 먼 3곳에서 선택하는 설명용 예시입니다. `compact: true`인 핵심 구현은 본문과 반복되는 결과 상자를 생략합니다. `sections[].table`은 비교표를 표시합니다.
 
@@ -55,7 +56,7 @@ node scripts/serve.mjs
 1. `assets/새-slug/`에 대표 이미지와 증빙 자료를 넣습니다.
 2. 프로젝트 JSON의 객체를 복사하고 모든 내용을 새 게임에 맞게 작성합니다. `slug`는 고유한 영어 소문자·숫자·하이픈으로 지정합니다.
 3. `cases`에는 핵심 구현, `extras`에는 추가 구현을 넣습니다. `navTitle`은 상세 목차의 짧은 이름입니다. 이미지·영상은 해당 프로젝트 폴더의 파일명을 연결합니다.
-4. `codeRevision`에 실제 자료와 일치하는 커밋을 넣습니다. 코드 링크의 `path`는 파일, `directory`는 폴더입니다. `testing`과 `sourceNotice`도 해당 자료에 맞게 작성합니다.
+4. `codeRevision`에 실제 자료와 일치하는 고정 커밋 SHA를 넣습니다. 코드 링크의 `path`는 파일, `directory`는 폴더입니다. `testing`과 `sourceNotice`도 해당 자료에 맞게 작성합니다.
 5. 작성 중에는 `published: false`로 둡니다. 공개할 때 `true`로 바꾸면 첫 페이지에 전체 내용이 펼쳐진 상태로 추가되고, 호환용 상세 주소·프로필·사이트맵에도 포함됩니다.
 6. `featured: true`인 첫 프로젝트는 소개 영역의 구현 사례 링크 기준입니다. 첫 화면에는 특정 게임을 노출하지 않습니다. 대표작을 바꾸면 기술 링크의 연결 대상도 함께 점검하세요.
 7. 빌드·점검 후 화면에서 확인합니다. 공개 프로젝트를 숨기거나 삭제할 경우 예전에 생성된 `projects/slug/` 폴더도 직접 제거합니다.
@@ -63,6 +64,8 @@ node scripts/serve.mjs
 핵심 사례 개수는 조절할 수 있습니다. `sections`에 하위 구현 설명·흐름·이미지를, `animations`에 `file`·`poster`·`title`·`alt`·`caption`을 넣으면 사용자 조작으로 재생하는 GIF를 연결할 수 있습니다. 코드 링크별 `revision`으로 서로 다른 근거 커밋을 지정할 수 있습니다. `technicalDocument`에는 실제 기술 문서 URL을 넣습니다. `comparison: true`는 기본 FPR 비교 이미지를 사용하며, `comparison: {"before": "파일명", "after": "파일명"}`으로 프로젝트별 비교 이미지를 지정할 수 있습니다. 일반 프로젝트에서는 이 옵션을 생략하세요.
 
 Dungeon Sweeper는 최신 27장 PPT의 설명·실제 이미지·GIF·코드 링크로 구성했습니다. 핵심 순서는 PPT의 가방·경제, 몬스터, 제작 도구, 탐험·저장, 조작·2.5D입니다. BattleArena와 같은 템플릿을 사용합니다. `evidenceTable`에는 `caption`·`headers`·`rows`·`note`를 넣어 미디어 열에 측정 비교표를 표시할 수 있습니다. `testingIntro`·`testingTitle`·`validationSections`로 검증 범위와 측정 조건을 구분합니다. 하위 `sections`도 `links`를 지원합니다. PPT 근거와 수치 조건은 [Dungeon Sweeper 자료 기록](docs/dungeonsweeper-sources.md)을 참조하세요.
+
+공개 PPT는 최신 원본의 슬라이드·이미지를 유지하되 작성자·수정자·제작 도구 메타데이터를 제거한 배포 사본입니다. Dungeon Sweeper의 코드 하이퍼링크도 웹과 같은 고정 커밋으로 연결합니다. `sourceManifest`의 최상위 해시는 원본을, `download`의 해시·크기는 공개 사본을 식별합니다. 메인·프로필의 공유 미리보기 이미지는 `profile.shareImage`로 지정하며 두 프로젝트를 함께 표시합니다. [제출 전 10개 항목 확인](docs/submission-review-20261023.md)에 근거와 한계를 기록했습니다.
 
 ## GitHub Pages
 

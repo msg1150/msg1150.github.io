@@ -20,7 +20,7 @@
     "cover": "ppt-cover-db780c60.png",
     "repository": "https://github.com/msg1150/UnrealTeamProjectPortfolio",
     "codeRevision": "fee0b72e4cc6236acfcb332139613f53fd87b244",
-    "presentation": "/assets/downloads/BattleArena-ParkJanghan.pptx?v=20261022-db780c60",
+    "presentation": "/assets/downloads/BattleArena-ParkJanghan.pptx?v=20261023-c710491d",
     "presentationSize": "40.9 MB",
     "featured": true,
     "published": true,
@@ -119,7 +119,8 @@
             "height": 308,
             "title": "조준 후 발사 장면",
             "caption": "조준선과 총구 위치가 다른 상태에서의 발사 장면",
-            "alt": "조준선과 총구 위치가 다른 상태에서의 발사 장면"
+            "alt": "조준선과 총구 위치가 다른 상태에서의 발사 장면",
+            "videoFile": "ppt-shooting-db780c60.mp4"
           }
         ]
       },
@@ -257,7 +258,8 @@
                 "alt": "입구 접근부터 출구 도착까지의 공간 포탈 통과 애니메이션",
                 "caption": "PPT의 통과 과정 GIF · 재생 버튼을 눌러 확인",
                 "width": 1000,
-                "height": 374
+                "height": 374,
+                "videoFile": "ppt-portal-traversal-db780c60.mp4"
               }
             ],
             "images": [
@@ -376,7 +378,7 @@
         "diagrams": [
           "data"
         ],
-    "mediaLayout": "diagram-right-images-below",
+        "mediaLayout": "diagram-right-images-below",
         "compact": true,
         "highlights": [
           "타입·Enum·중첩 구조",
@@ -430,7 +432,8 @@
               "top": 0.17,
               "right": 0,
               "bottom": 0.08
-            }
+            },
+            "videoFile": "ppt-beam-before-db780c60.mp4"
           },
           {
             "file": "ppt-beam-after-db780c60.gif",
@@ -445,7 +448,8 @@
               "top": 0.17,
               "right": 0,
               "bottom": 0.08
-            }
+            },
+            "videoFile": "ppt-beam-after-db780c60.mp4"
           }
         ],
         "links": [
@@ -568,7 +572,8 @@
             "height": 342,
             "title": "사망 카메라 전환",
             "caption": "사망 전후의 시점 전환과 벽 뒤 공격자 표시",
-            "alt": "사망 전후의 시점 전환과 벽 뒤 공격자 표시"
+            "alt": "사망 전후의 시점 전환과 벽 뒤 공격자 표시",
+            "videoFile": "ppt-death-camera-db780c60.mp4"
           }
         ],
         "images": [
@@ -634,7 +639,7 @@
       }
     ],
     "blueprintNotice": "공개 저장소에는 C++ 코드와 WPF 도구, 직접 구현한 기능을 중심으로 선별한 무기 Blueprint를 수록했습니다.",
-    "verificationSummary": "Unreal Automation Test로 투사체 충돌·합류 지점, 1인칭 렌더링, 공간 포탈의 변환·투영·클리핑·통과 조건을 반복 검사하는 시나리오를 작성했습니다. 공개 저장소에는 테스트 실행 결과가 포함되어 있지 않습니다.",
+    "verificationSummary": "Unreal Automation Test로 투사체 충돌·합류 지점, 1인칭 렌더링, 공간 포탈의 변환·투영·클리핑·통과 조건을 반복 검사하는 시나리오를 작성했습니다.",
     "sourceSlides": {
       "overview": [
         1,
@@ -669,8 +674,8 @@
     "summary": "공간형 가방과 마을 경제, 몬스터 AI·BFS 이동, 던전 제작 도구, 층별 탐험·저장 복원과 2.5D 표시를 구현한 개인 프로젝트입니다.",
     "description": "Unity 기반 2.5D 비전투 전리품 회수 게임입니다. 가방 배치와 해체·귀환·거래로 이어지는 흐름, 몬스터 AI, 던전 제작 도구와 저장·복원을 개인 개발하고 있습니다.",
     "repository": "https://github.com/msg1150/DungeonSweeper",
-    "codeRevision": "main",
-    "presentation": "/assets/downloads/DungeonSweeper-ParkJanghan.pptx?v=20261023-44532b95",
+    "codeRevision": "8cab0a9565909b7917b780bd7b92064493393d53",
+    "presentation": "/assets/downloads/DungeonSweeper-ParkJanghan.pptx?v=20261023-08b80d70",
     "presentationSize": "48.3 MB",
     "sourceManifest": "content/sources/dungeonsweeper.json",
     "featured": false,
@@ -691,7 +696,7 @@
         "path": "Assets/Scripts/Runtime/Core/GameSession.cs"
       }
     ],
-    "history": "https://github.com/msg1150/DungeonSweeper/commits/main/",
+    "history": "https://github.com/msg1150/DungeonSweeper/commits/8cab0a9565909b7917b780bd7b92064493393d53/",
     "sourceSlides": {
       "overview": [
         1,
@@ -869,7 +874,8 @@
             "height": 496,
             "title": "발견·추적·마지막 목격 위치 수색",
             "caption": "플레이어 발견 후 시야가 차단돼도 마지막 목격 위치를 조사",
-            "alt": "발견·추적·마지막 목격 위치 수색 · 플레이어 발견 후 시야가 차단돼도 마지막 목격 위치를 조사"
+            "alt": "발견·추적·마지막 목격 위치 수색 · 플레이어 발견 후 시야가 차단돼도 마지막 목격 위치를 조사",
+            "videoFile": "awareness.mp4"
           }
         ],
         "sections": [
@@ -898,7 +904,8 @@
                 "height": 496,
                 "title": "벽 우회와 직접 이동",
                 "caption": "원래 속도의 실제 이동 · 벽 우회 후 열린 공간에서 직접 이동",
-                "alt": "벽 우회와 직접 이동 · 원래 속도의 실제 이동 · 벽 우회 후 열린 공간에서 직접 이동"
+                "alt": "벽 우회와 직접 이동 · 원래 속도의 실제 이동 · 벽 우회 후 열린 공간에서 직접 이동",
+                "videoFile": "navigation.mp4"
               }
             ],
             "highlights": [
@@ -1024,7 +1031,8 @@
                 "height": 640,
                 "title": "시드 1150 → 1151 → 1150",
                 "caption": "실제 생성 명령으로 다른 시드와 같은 시드 재현을 연속 비교",
-                "alt": "시드 1150 → 1151 → 1150 · 실제 생성 명령으로 다른 시드와 같은 시드 재현을 연속 비교"
+                "alt": "시드 1150 → 1151 → 1150 · 실제 생성 명령으로 다른 시드와 같은 시드 재현을 연속 비교",
+                "videoFile": "generation.mp4"
               }
             ],
             "highlights": [
@@ -1143,7 +1151,8 @@
             "height": 540,
             "title": "계단 왕복과 층별 상태 보존",
             "caption": "실제 계단 이동 · 1층 출발 → 2층 도착 → 1층 복귀",
-            "alt": "계단 왕복과 층별 상태 보존 · 실제 계단 이동 · 1층 출발 → 2층 도착 → 1층 복귀"
+            "alt": "계단 왕복과 층별 상태 보존 · 실제 계단 이동 · 1층 출발 → 2층 도착 → 1층 복귀",
+            "videoFile": "floors.mp4"
           }
         ],
         "sections": [
@@ -1172,7 +1181,8 @@
                 "height": 640,
                 "title": "저장 → 상태 변경 → 이전 상태 복원",
                 "caption": "가방 1개 / 미배치 3개 저장 → 2개 / 2개로 변경 → 1개 / 3개 복원",
-                "alt": "저장 → 상태 변경 → 이전 상태 복원 · 가방 1개 / 미배치 3개 저장 → 2개 / 2개로 변경 → 1개 / 3개 복원"
+                "alt": "저장 → 상태 변경 → 이전 상태 복원 · 가방 1개 / 미배치 3개 저장 → 2개 / 2개로 변경 → 1개 / 3개 복원",
+                "videoFile": "snapshot.mp4"
               }
             ],
             "highlights": [
@@ -1314,7 +1324,8 @@
             "height": 546,
             "title": "이동 중 대시와 카메라 추종",
             "caption": "30fps 실제 이동 · 대시 입력 후 방향 유지와 카메라 추종",
-            "alt": "이동 중 대시와 카메라 추종 · 30fps 실제 이동 · 대시 입력 후 방향 유지와 카메라 추종"
+            "alt": "이동 중 대시와 카메라 추종 · 30fps 실제 이동 · 대시 입력 후 방향 유지와 카메라 추종",
+            "videoFile": "movement.mp4"
           }
         ],
         "sections": [
@@ -1427,7 +1438,8 @@
             "height": 590,
             "title": "진행 중 해체 세션 저장·복원",
             "caption": "영상 상단 단계 1–4와 왼쪽 흐름을 비교 · 저장 4.7초 / 불러오기 9.2초",
-            "alt": "진행 중 해체 세션 저장·복원 · 영상 상단 단계 1–4와 왼쪽 흐름을 비교 · 저장 4.7초 / 불러오기 9.2초"
+            "alt": "진행 중 해체 세션 저장·복원 · 영상 상단 단계 1–4와 왼쪽 흐름을 비교 · 저장 4.7초 / 불러오기 9.2초",
+            "videoFile": "dismantling.mp4"
           }
         ],
         "links": [
@@ -1444,6 +1456,63 @@
           "저장된 세션에서 해체를 재개",
           "성공 창을 재추첨하지 않습니다",
           "긴 프레임에서도 왕복 이동량을 유지"
+        ]
+      },
+      {
+        "id": "world-geometry",
+        "title": "현재 층의 지형을 재질별 메시로 구성",
+        "sourceSlides": [
+          25
+        ],
+        "text": "같은 지형·재질·고정 카메라에서 메시 병합 여부만 바꿔 비교했습니다. 16×16 실제 도면의 지형 조각 385개를 3개로 병합하며 삼각형은 전후 모두 4,620개, SRP Batcher는 ON입니다.",
+        "paragraphs": [
+          "재질별 CombineMeshes와 UInt32 인덱스를 사용하고 생성 메시·재질은 OnDestroy에서 해제합니다. 표시 메시와 논리 충돌체는 분리합니다.",
+          "렌더링 전체 카운터의 프레임 중앙값이며 전체 프레임 시간의 개선율을 뜻하지 않습니다."
+        ],
+        "evidenceTable": {
+          "caption": "지형 메시 병합 · 조건별 중앙값",
+          "headers": [
+            "측정 항목",
+            "비병합",
+            "재질별 병합"
+          ],
+          "rows": [
+            [
+              "SRP Draw Calls/frame",
+              "778",
+              "14"
+            ],
+            [
+              "SetPass Calls/frame",
+              "6",
+              "4"
+            ]
+          ],
+          "note": "PPT 25쪽 · 같은 삼각형 수에서 렌더링 호출 비교. 전체 게임 성능을 대표하지 않습니다."
+        },
+        "images": [
+          {
+            "file": "ppt-geometry-44532b95.png",
+            "width": 1010,
+            "height": 570,
+            "alt": "실제 Scene 뷰 · 표시 메시와 논리 충돌체 분리",
+            "caption": "실제 Scene 뷰 · 표시 메시와 논리 충돌체 분리"
+          }
+        ],
+        "links": [
+          {
+            "label": "ThreeDWorldView.cs",
+            "path": "Assets/Scripts/Runtime/Presentation/World/ThreeDWorldView.cs"
+          },
+          {
+            "label": "DungeonLayoutFactory.cs",
+            "path": "Assets/Scripts/Runtime/Dungeon/World/DungeonLayoutFactory.cs"
+          }
+        ],
+        "highlights": [
+          "385개를 3개로 병합",
+          "삼각형은 전후 모두 4,620개",
+          "표시 메시와 논리 충돌체는 분리"
         ]
       },
       {
@@ -1539,7 +1608,8 @@
             "height": 455,
             "title": "실제 이동에 따른 미니맵 갱신",
             "caption": "표식 이동과 발견 셀 갱신 · 성능 대조 실험과 별도 조건",
-            "alt": "실제 이동에 따른 미니맵 갱신 · 표식 이동과 발견 셀 갱신 · 성능 대조 실험과 별도 조건"
+            "alt": "실제 이동에 따른 미니맵 갱신 · 표식 이동과 발견 셀 갱신 · 성능 대조 실험과 별도 조건",
+            "videoFile": "minimap.mp4"
           }
         ],
         "links": [
@@ -1556,63 +1626,6 @@
           "같으면 재합성을 생략",
           "이동 표식은 별도로 갱신",
           "캐시 판정만 해제한 조건"
-        ]
-      },
-      {
-        "id": "world-geometry",
-        "title": "현재 층의 지형을 재질별 메시로 구성",
-        "sourceSlides": [
-          25
-        ],
-        "text": "같은 지형·재질·고정 카메라에서 메시 병합 여부만 바꿔 비교했습니다. 16×16 실제 도면의 지형 조각 385개를 3개로 병합하며 삼각형은 전후 모두 4,620개, SRP Batcher는 ON입니다.",
-        "paragraphs": [
-          "재질별 CombineMeshes와 UInt32 인덱스를 사용하고 생성 메시·재질은 OnDestroy에서 해제합니다. 표시 메시와 논리 충돌체는 분리합니다.",
-          "렌더링 전체 카운터의 프레임 중앙값이며 전체 프레임 시간의 개선율을 뜻하지 않습니다."
-        ],
-        "evidenceTable": {
-          "caption": "지형 메시 병합 · 조건별 중앙값",
-          "headers": [
-            "측정 항목",
-            "비병합",
-            "재질별 병합"
-          ],
-          "rows": [
-            [
-              "SRP Draw Calls/frame",
-              "778",
-              "14"
-            ],
-            [
-              "SetPass Calls/frame",
-              "6",
-              "4"
-            ]
-          ],
-          "note": "PPT 25쪽 · 같은 삼각형 수에서 렌더링 호출 비교. 전체 게임 성능을 대표하지 않습니다."
-        },
-        "images": [
-          {
-            "file": "ppt-geometry-44532b95.png",
-            "width": 1010,
-            "height": 570,
-            "alt": "실제 Scene 뷰 · 표시 메시와 논리 충돌체 분리",
-            "caption": "실제 Scene 뷰 · 표시 메시와 논리 충돌체 분리"
-          }
-        ],
-        "links": [
-          {
-            "label": "ThreeDWorldView.cs",
-            "path": "Assets/Scripts/Runtime/Presentation/World/ThreeDWorldView.cs"
-          },
-          {
-            "label": "DungeonLayoutFactory.cs",
-            "path": "Assets/Scripts/Runtime/Dungeon/World/DungeonLayoutFactory.cs"
-          }
-        ],
-        "highlights": [
-          "385개를 3개로 병합",
-          "삼각형은 전후 모두 4,620개",
-          "표시 메시와 논리 충돌체는 분리"
         ]
       }
     ],
@@ -1686,7 +1699,7 @@
         ]
       }
     ],
-    "sourceNotice": "Unity / C# / URP 기반 전체 개인 프로젝트 저장소와 기능별 소스·README·Tests·Tools를 PPT에 연결했습니다. 개발 시작과 첫 커밋은 2026.09.17 기준입니다. 코드 링크는 PPT의 main 주소를 유지합니다.",
+    "sourceNotice": "Unity / C# / URP 기반 개인 프로젝트와 기능별 소스·README·Tests·Tools를 제공합니다. 개발 시작과 첫 커밋은 2026.09.17이며, 코드 링크와 다운로드 PPT 링크는 8cab0a95 커밋에 고정했습니다.",
     "verificationSummary": "격리 복사본의 실행별 assertion 통과 기록을 에디터 186회·Unity 런타임 582회·Windows 재실행 12회로 구분했습니다. 2026.10.23 성능 수치는 단일 PC의 기법별 대조 실험이며 전체 게임 성능을 대표하지 않습니다.",
     "highlights": [
       "assertion 통과 186회",

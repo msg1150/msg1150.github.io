@@ -139,6 +139,7 @@ function stopAnimation(container) {
 document.querySelectorAll('[data-animation]').forEach(container => {
   const image = container.querySelector('[data-animation-image]');
   const button = container.querySelector('[data-animation-toggle]');
+  if (!image || !button) return;
   button.addEventListener('click', () => {
     if (button.getAttribute('aria-pressed') === 'true') {
       stopAnimation(container);

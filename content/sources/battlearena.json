@@ -147,5 +147,17 @@
         "https://github.com/msg1150/UnrealTeamProjectPortfolio/blob/fee0b72e4cc6236acfcb332139613f53fd87b244/Weapon/FirstPersonRenderingTests.cpp"
       ]
     }
-  ]
+  ],
+  "download": {
+    "sha256": "c710491d0f0b80af0435a7b6ffb63a0642a5d038f73683e8b0df897ba5fd0f39",
+    "bytes": 42866872,
+    "sourceSha256": "db780c603bf2863074036e184c5dca2e13682c0a581b02d1268bcbdac50834ea",
+    "sanitizedMetadata": true,
+    "notesEmpty": true,
+    "codeRevision": null,
+    "changedParts": [
+      "docProps/core.xml",
+      "docProps/app.xml"
+    ]
+  }
 }

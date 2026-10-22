@@ -215,5 +215,42 @@
         "https://github.com/msg1150/DungeonSweeper/commits/main/"
       ]
     }
-  ]
+  ],
+  "download": {
+    "sha256": "08b80d707d3c0014111db85b40c6b1d03fe4ce639fdb362986ec0ee0c3016e4a",
+    "bytes": 50640151,
+    "sourceSha256": "44532b95b4e79e1316b9cb628004f9550d4b7d993a1eb14558fe6f494c0a4ec9",
+    "sanitizedMetadata": true,
+    "notesEmpty": true,
+    "codeRevision": "8cab0a9565909b7917b780bd7b92064493393d53",
+    "changedParts": [
+      "docProps/core.xml",
+      "docProps/app.xml",
+      "ppt/slides/_rels/slide10.xml.rels",
+      "ppt/slides/_rels/slide11.xml.rels",
+      "ppt/slides/_rels/slide12.xml.rels",
+      "ppt/slides/_rels/slide13.xml.rels",
+      "ppt/slides/_rels/slide14.xml.rels",
+      "ppt/slides/_rels/slide15.xml.rels",
+      "ppt/slides/_rels/slide16.xml.rels",
+      "ppt/slides/_rels/slide17.xml.rels",
+      "ppt/slides/_rels/slide18.xml.rels",
+      "ppt/slides/_rels/slide19.xml.rels",
+      "ppt/slides/_rels/slide20.xml.rels",
+      "ppt/slides/_rels/slide21.xml.rels",
+      "ppt/slides/_rels/slide22.xml.rels",
+      "ppt/slides/_rels/slide23.xml.rels",
+      "ppt/slides/_rels/slide24.xml.rels",
+      "ppt/slides/_rels/slide25.xml.rels",
+      "ppt/slides/_rels/slide26.xml.rels",
+      "ppt/slides/_rels/slide27.xml.rels",
+      "ppt/slides/_rels/slide3.xml.rels",
+      "ppt/slides/_rels/slide4.xml.rels",
+      "ppt/slides/_rels/slide5.xml.rels",
+      "ppt/slides/_rels/slide6.xml.rels",
+      "ppt/slides/_rels/slide7.xml.rels",
+      "ppt/slides/_rels/slide8.xml.rels",
+      "ppt/slides/_rels/slide9.xml.rels"
+    ]
+  }
 }
