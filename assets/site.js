@@ -75,7 +75,7 @@ document.querySelectorAll('[data-comparison]').forEach(container => {
       image.src = image.dataset[state];
       image.alt = `${label}: 벽 밀착 상태에서의 로컬 1인칭 무기`;
       image.closest('a').href = image.dataset[state];
-      container.querySelector('[data-compare-caption]').textContent = `${label} · 로컬 1인칭 무기 표시 비교`;
+      container.querySelector('[data-compare-caption]').textContent = `${label}, 로컬 1인칭 무기 표시 비교`;
     });
   });
 });

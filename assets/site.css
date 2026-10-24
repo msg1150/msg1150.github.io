@@ -164,7 +164,7 @@ figcaption a{text-decoration:underline;white-space:nowrap}
 .data-flow{display:flex;align-items:stretch;gap:0;padding:0;list-style:none;margin:28px 0;border:1px solid #cbd1c0;border-radius:3px}
 .data-flow li{margin:0;padding:13px 11px;flex:1;text-align:center;font-family:Consolas,"Malgun Gothic",monospace;font-size:10px;position:relative;display:grid;place-items:center}
 .data-flow li+li{border-left:1px solid #cbd1c0}
-.data-flow li+li:before{content:'›';position:absolute;left:-4px;background:var(--paper);top:50%;transform:translateY(-50%);font-size:15px;color:#788568}
+.data-flow li+li:before{content:'>';position:absolute;left:-4px;background:var(--paper);top:50%;transform:translateY(-50%);font-size:15px;color:#788568}
 .additional>.section-intro{margin-top:15px;margin-bottom:26px}
 .extra{border-top:1px solid var(--line)}
 .extra:last-child{border-bottom:1px solid var(--line)}
@@ -376,7 +376,7 @@ details[open]>summary .when-closed,details:not([open])>summary .when-open{displa
 .explain-diagram figcaption{display:block;font-size:11px;line-height:1.9;border-top:1px solid #e0e5d9;padding-top:12px;margin-top:10px}
 .diagram-pipeline{list-style:none;padding:0;margin:0;display:grid;gap:18px}
 .diagram-pipeline li{position:relative;padding:11px 14px;background:#f1f4ec;border:1px solid #dce4d3;border-radius:4px;margin:0}
-.diagram-pipeline li+li:before{content:'↓';position:absolute;top:-24px;left:50%;font-size:17px;color:#78876a}
+.diagram-pipeline li+li:before{content:'';position:absolute;top:-16px;left:calc(50% - 4px);width:7px;height:7px;border-right:2px solid #78876a;border-bottom:2px solid #78876a;transform:rotate(45deg)}
 .diagram-pipeline strong{display:block;font-size:13px}
 .diagram-pipeline span{display:block;font-size:11px;color:var(--muted);margin-top:3px}
 .diagram-branches{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px;padding-top:18px;border-top:2px solid #b7c8a7}
@@ -416,6 +416,8 @@ details[open]>summary .when-closed,details:not([open])>summary .when-open{displa
 .zoom-hint .icon{width:17px;height:17px}
 .lightbox-top button{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px}
 .site-footer>a:last-child{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px}
+.back-link>.icon,.back-to-projects>.icon{transform:rotate(90deg)}
+.project-scope a .icon{width:13px;height:13px;vertical-align:middle}
 .profile-section{padding-top:50px;padding-bottom:0;scroll-margin-top:112px}
 .profile-disclosure{scroll-margin-top:112px;border-top:1px solid var(--line);padding-top:28px}
 .profile-disclosure>summary h2{font-size:34px;margin-top:8px}

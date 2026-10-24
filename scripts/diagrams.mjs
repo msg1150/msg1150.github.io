@@ -12,15 +12,15 @@ const diagrams = {
     + '<path d="M 254 76 L 268 78 L 261 90" class="arrow"/><path d="M 487 68 L 500 75 L 487 82" class="arrow secondary"/>'
     + dot(76,151,'accent-fill') + dot(276,75,'accent-fill')
     + text(50,180,'총구','strong') + text(276,50,'합류 지점','strong','middle')
-    + text(205,166,'① 합류까지 이동','','middle') + text(415,111,'② 조준 방향으로','','middle')
+    + text(205,166,'1. 합류까지 이동','','middle') + text(415,111,'2. 조준 방향으로','','middle')
     + text(280,207,'프레임 시간 = 합류까지의 시간 + 남은 시간','muted','middle'),230),
-    '위치 관계를 설명하는 개념도 · 이동 중 충돌하면 중단'),
+    '위치 관계를 설명하는 개념도, 이동 중 충돌하면 중단'),
 
   sweep: () => frame('위치 두 점 사이의 전체 구간을 검사', svg('이전 위치 P0에서 다음 예정 위치 P1까지 Sphere Sweep으로 검사하며 그 사이에 있는 얇은 벽에서 첫 충돌을 선택한다.',
     box(44,86,470,48,'sweep-area') + box(305,42,15,125,'wall')
     + line(67,110,493,110,'guide') + line(67,110,298,110,'path')
     + dot(67,110,'accent-fill') + dot(493,110,'muted-fill') + dot(305,110,'accent-fill')
-    + text(67,68,'P0','strong','middle') + text(493,68,'P1 · 예정','muted','middle')
+    + text(67,68,'P0','strong','middle') + text(493,68,'P1, 예정','muted','middle')
     + text(312,28,'얇은 벽','strong','middle') + text(305,188,'가장 이른 Hit.Time 선택','accent-text','middle')
     + text(67,153,'이전 위치','muted','middle'),210),
     'RecordTravel로 기록한 각 이동 구간을 Sphere Sweep'),
@@ -39,7 +39,7 @@ const diagrams = {
     + text(104,242,'이동 20','muted','middle') + text(456,242,'이동 30','muted','middle')
     + text(280,279,'도보 구간 아님','muted','middle')
     + text(48,308,'출발','','middle') + text(174,308,'입구','','middle') + text(386,308,'출구','','middle') + text(512,308,'도착','','middle'),330),
-    '비용 설명용 예시 · 실제 맵 거리 아님. 포탈로 실제 비용이 직선거리 추정보다 작아질 수 있어 Dijkstra 사용'),
+    '비용 설명용 예시, 실제 맵 거리 아님. 포탈로 실제 비용이 직선거리 추정보다 작아질 수 있어 Dijkstra 사용'),
 
   clipping: () => frame('출구 면 이전은 잘라내고, 이후는 표시', svg('가상 카메라와 출구 사이의 중간 벽은 잘라내고 출구 면부터 장면을 표시한다. 카메라 거리는 원근감 계산에 유지한다.',
     box(24,51,275,112,'clip-zone') + box(299,51,237,112,'visible-zone')
@@ -50,15 +50,15 @@ const diagrams = {
     + text(299,22,'출구 면 = Near Clip','accent-text','middle')
     + text(446,191,'표시할 물체','strong','middle')
     + text(176,155,'잘라냄','muted','middle') + text(403,71,'정상 표시','strong','middle'),215),
-    '출구 쪽 공간을 옆에서 본 개념도 · 카메라 거리는 원근감 계산에 유지'),
+    '출구 쪽 공간을 옆에서 본 개념도, 카메라 거리는 원근감 계산에 유지'),
 
-  data: () => frame('데이터 명세에서 편집·검증·적용까지',
-    `<ol class="diagram-pipeline"><li><strong>Unreal Reflection</strong><span>타입 · Enum · 입력 범위 추출</span></li><li><strong>Manifest → WPF 편집기</strong><span>명세에 맞춰 화면 구성</span></li><li><strong>입력 검증</strong><span>통과하면 JSON 저장 / 오류면 저장 중단</span></li></ol><div class="diagram-branches"><div><span>RUNTIME</span><strong>메모리에 값 적용</strong></div><div><span>EDITOR</span><strong>값 적용 → 에셋 저장</strong><small>에셋 저장 시 연결된 JSON도 갱신</small></div></div>`,
+  data: () => frame('데이터 명세에서 편집, 검증, 적용까지',
+    `<ol class="diagram-pipeline"><li><strong>Unreal Reflection</strong><span>타입, Enum, 입력 범위 추출</span></li><li><strong>Manifest -> WPF 편집기</strong><span>명세에 맞춰 화면 구성</span></li><li><strong>입력 검증</strong><span>통과하면 JSON 저장 / 오류면 저장 중단</span></li></ol><div class="diagram-branches"><div><span>RUNTIME</span><strong>메모리에 값 적용</strong></div><div><span>EDITOR</span><strong>값 적용 -> 에셋 저장</strong><small>에셋 저장 시 연결된 JSON도 갱신</small></div></div>`,
     '값 적용과 에셋 파일 저장의 시점을 분리'),
 
   spawn: () => frame('먼 절반만 남긴 뒤 무작위로 한 곳 선택',
-    `<div class="spawn-example" data-spawn-example><div class="spawn-distance"><span>← 사망 위치에서 먼 쪽</span><span>가까운 쪽 →</span></div><ol class="spawn-candidates" aria-label="거리가 먼 순서의 스폰 후보 6곳">${['A','B','C','D','E','F'].map((name,i)=>`<li class="${i<3?'is-retained':'is-excluded'}${i===1?' is-selected':''}" data-spawn-candidate="${name}"><span>후보 ${name}</span><small data-spawn-state>${i===1?'선택 예시':i<3?'유지':'제외'}</small></li>`).join('')}</ol><div class="spawn-groups"><span>먼 절반 유지: A / B / C</span><span>가까운 절반 제외: D / E / F</span></div><div class="spawn-draw"><p role="status" aria-live="polite" data-spawn-result>선택 예시: 후보 B</p><button type="button" data-spawn-draw>다시 추첨 ↻</button></div><p class="diagram-note">6곳 중 먼 3곳만 추첨합니다. 실제 게임의 거리값을 재현한 것은 아닙니다.</p></div>`,
-    '남길 후보 수: max(1, floor(N / 2)) · 같은 거리는 무작위로 순서 결정')
+    `<div class="spawn-example" data-spawn-example><div class="spawn-distance"><span>사망 위치에서 먼 쪽</span><span>가까운 쪽</span></div><ol class="spawn-candidates" aria-label="거리가 먼 순서의 스폰 후보 6곳">${['A','B','C','D','E','F'].map((name,i)=>`<li class="${i<3?'is-retained':'is-excluded'}${i===1?' is-selected':''}" data-spawn-candidate="${name}"><span>후보 ${name}</span><small data-spawn-state>${i===1?'선택 예시':i<3?'유지':'제외'}</small></li>`).join('')}</ol><div class="spawn-groups"><span>먼 절반 유지: A / B / C</span><span>가까운 절반 제외: D / E / F</span></div><div class="spawn-draw"><p role="status" aria-live="polite" data-spawn-result>선택 예시: 후보 B</p><button type="button" data-spawn-draw>다시 추첨</button></div><p class="diagram-note">6곳 중 먼 3곳만 추첨합니다. 실제 게임의 거리값을 재현한 것은 아닙니다.</p></div>`,
+    '남길 후보 수: max(1, floor(N / 2)), 같은 거리는 무작위로 순서 결정')
 };
 
 export function renderDiagrams(names = []) {

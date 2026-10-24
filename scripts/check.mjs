@@ -24,6 +24,8 @@ async function htmlAt(target) {
 for (const page of pages) {
   const file = path.join(root,page);
   const html = await htmlAt(file);
+  const specialSymbols = [...new Set([...html].filter(char => char.codePointAt(0) > 127 && /[\p{P}\p{S}\p{Zs}]/u.test(char)))];
+  assert.equal(specialSymbols.length, 0, `Use keyboard punctuation or SVG icons in ${page}: ${specialSymbols.join(' ')}`);
   assert(html.includes('<html lang="ko">'),`Korean language missing: ${page}`);
   assert.equal((html.match(/<h1(?:\s|>)/g)||[]).length,1,`Exactly one h1 required: ${page}`);
   assert(html.includes('name="description"') && html.includes('rel="canonical"'),`Metadata missing: ${page}`);
@@ -59,7 +61,7 @@ assert(!/href="\/resume\//.test(home), 'Homepage profile navigation should stay 
 assert(home.includes('<section id="profile" class="wrap unified-profile">'), 'Top section must be the unified profile');
 assert(!home.includes('프로필 보기'), 'Unified profile must not link to a duplicate profile');
 assert(!home.includes('class="profile-disclosure'), 'Duplicate profile panel must be removed');
-for (const skill of profile.skills) for (const technology of skill.tech.split(' · ')) {
+for (const skill of profile.skills) for (const technology of skill.tech.split(', ')) {
   assert(home.includes(`aria-label="${technology}" data-label="${technology}"`), `Technology icon needs a name: ${technology}`);
 }
 for (const page of pages) {
